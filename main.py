@@ -651,7 +651,7 @@ class MyRSSApp(QMainWindow):
         self.nav_tree.setContextMenuPolicy(Qt.ContextMenuPolicy.CustomContextMenu)
         self.nav_tree.customContextMenuRequested.connect(self.show_sidebar_context_menu)
         self.nav_tree.itemClicked.connect(self.on_sidebar_item_clicked)
-        sidebar_layout.addWidget(self.nav_tree)
+        sidebar_layout.addWidget(self.nav_tree, 1)
 
         splitter.addWidget(sidebar_widget)
 
@@ -665,10 +665,12 @@ class MyRSSApp(QMainWindow):
         list_layout.addWidget(self.list_header)
 
         self.article_list_widget = QListWidget()
+        self.article_list_widget.setWordWrap(True)
+        self.article_list_widget.setHorizontalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOff)
         self.article_list_widget.setContextMenuPolicy(Qt.ContextMenuPolicy.CustomContextMenu)
         self.article_list_widget.customContextMenuRequested.connect(self.show_article_context_menu)
         self.article_list_widget.itemClicked.connect(self.on_article_selected)
-        list_layout.addWidget(self.article_list_widget)
+        list_layout.addWidget(self.article_list_widget, 1)
 
         splitter.addWidget(list_container)
 
@@ -709,19 +711,26 @@ class MyRSSApp(QMainWindow):
         # Text Viewer
         self.article_browser = QTextBrowser()
         self.article_browser.setOpenExternalLinks(True)
-        reader_layout.addWidget(self.article_browser)
+        reader_layout.addWidget(self.article_browser, 1)
 
         splitter.addWidget(reader_container)
 
         splitter.setStretchFactor(0, 2)
         splitter.setStretchFactor(1, 3)
         splitter.setStretchFactor(2, 4)
-        root_layout.addWidget(splitter)
+        root_layout.addWidget(splitter, 1)
 
-        # 3. STATUS BAR
+        # 3. STATUS BAR (Fixed compact height with panel border)
         self.status_bar_lbl = QLabel("// SYSTEM READY // INTEL STREAM ACTIVE")
-        self.status_bar_lbl.setStyleSheet(f"color: {CP_SUBTEXT}; font-size: 9pt; padding: 2px;")
-        root_layout.addWidget(self.status_bar_lbl)
+        self.status_bar_lbl.setFixedHeight(22)
+        self.status_bar_lbl.setStyleSheet(f"""
+            background-color: {CP_PANEL};
+            color: {CP_SUBTEXT};
+            border-top: 1px solid {CP_DIM};
+            font-size: 9pt;
+            padding: 2px 6px;
+        """)
+        root_layout.addWidget(self.status_bar_lbl, 0)
 
     # --- SIDEBAR POPULATION ---
     def populate_sidebar(self):

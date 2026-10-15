@@ -9,14 +9,14 @@
         "science"
       ],
       "favicon": "",
-      "last_fetched": "2026-10-15T05:14:27.539128+00:00",
+      "last_fetched": "2026-10-15T05:53:49.051886+00:00",
       "fetch_error": null,
       "articles": [
         {
           "id": "https://arstechnica.com/security/2026/10/fridge-hack-costing-millions-and-sparking-fires-stemmed-from-poor-security/",
           "link": "https://arstechnica.com/security/2026/10/fridge-hack-costing-millions-and-sparking-fires-stemmed-from-poor-security/",
           "published": "Wed, 14 Oct 2026 21:35:09 +0000",
-          "read": false,
+          "read": true,
           "starred": false,
           "summary": "Incident hitting 700 supermarkets exploited outdated devices exposed to the Internet.",
           "title": "Fridge hack costing millions and sparking fires stemmed from poor security"
@@ -25,7 +25,7 @@
           "id": "https://arstechnica.com/gaming/2026/10/programming-is-hard-epic-games-leans-on-vibe-coding-for-its-new-launcher-app/",
           "link": "https://arstechnica.com/gaming/2026/10/programming-is-hard-epic-games-leans-on-vibe-coding-for-its-new-launcher-app/",
           "published": "Wed, 14 Oct 2026 21:15:56 +0000",
-          "read": false,
+          "read": true,
           "starred": false,
           "summary": "But the new \"Preview\" app \"will have some bugs,\" Epic warns.",
           "title": "Epic says its new vibe-coded Epic Games Launcher is faster than Steam"
@@ -34,7 +34,7 @@
           "id": "https://arstechnica.com/gadgets/2026/10/nato-may-redeploy-anti-drone-defenses-as-attacks-sink-more-black-sea-shipping/",
           "link": "https://arstechnica.com/gadgets/2026/10/nato-may-redeploy-anti-drone-defenses-as-attacks-sink-more-black-sea-shipping/",
           "published": "Wed, 14 Oct 2026 21:03:11 +0000",
-          "read": false,
+          "read": true,
           "starred": false,
           "summary": "Suspected Russian drones have sunk or damaged 5 ships near Bulgaria and Romania.",
           "title": "NATO may redeploy anti-drone defenses as attacks sink more Black Sea shipping"
@@ -43,7 +43,7 @@
           "id": "https://arstechnica.com/space/2026/10/nasas-embattled-venus-missions-are-back-on-track-after-cancellation-threat/",
           "link": "https://arstechnica.com/space/2026/10/nasas-embattled-venus-missions-are-back-on-track-after-cancellation-threat/",
           "published": "Wed, 14 Oct 2026 20:48:07 +0000",
-          "read": false,
+          "read": true,
           "starred": false,
           "summary": "\"This is great news for us. We're staffing up. We're accelerating.\"",
           "title": "Things are finally looking up for NASA's first missions to Venus in a generation"
@@ -52,7 +52,7 @@
           "id": "https://arstechnica.com/tech-policy/2026/10/schools-libraries-plead-with-fcc-to-scrap-idea-of-killing-2b-broadband-program/",
           "link": "https://arstechnica.com/tech-policy/2026/10/schools-libraries-plead-with-fcc-to-scrap-idea-of-killing-2b-broadband-program/",
           "published": "Wed, 14 Oct 2026 20:15:56 +0000",
-          "read": false,
+          "read": true,
           "starred": false,
           "summary": "FCC chair threatens E-Rate fund, blames schools for kids' excessive screen time.",
           "title": "Schools across US protest FCC plan that could disconnect kids from Internet"
@@ -61,7 +61,7 @@
           "id": "https://arstechnica.com/tech-policy/2026/10/georgia-man-sues-flock-sheriffs-office-over-alleged-alpr-fueled-retaliation/",
           "link": "https://arstechnica.com/tech-policy/2026/10/georgia-man-sues-flock-sheriffs-office-over-alleged-alpr-fueled-retaliation/",
           "published": "Wed, 14 Oct 2026 19:53:01 +0000",
-          "read": false,
+          "read": true,
           "starred": false,
           "summary": "Plaintiff claims cameras enabled warrantless tracking and monitoring after he previously sued over excessive force.",
           "title": "Georgia man sues Flock, sheriff's office over alleged ALPR-fueled retaliation"
@@ -70,7 +70,7 @@
           "id": "https://arstechnica.com/cars/2026/10/software-development-and-rules-stability-prototype-racing-in-2030/",
           "link": "https://arstechnica.com/cars/2026/10/software-development-and-rules-stability-prototype-racing-in-2030/",
           "published": "Wed, 14 Oct 2026 19:44:26 +0000",
-          "read": false,
+          "read": true,
           "starred": false,
           "summary": "With the end of IMSA\u2019s 2026 season, we have thoughts about the future of the sport.",
           "title": "Software development and rules stability: Prototype racing in 2030"
@@ -151,7 +151,7 @@
           "id": "https://arstechnica.com/health/2026/10/martin-shkreli-livestreamed-himself-violating-lifetime-pharma-ban-ftc-says/",
           "link": "https://arstechnica.com/health/2026/10/martin-shkreli-livestreamed-himself-violating-lifetime-pharma-ban-ftc-says/",
           "published": "Tue, 13 Oct 2026 22:48:12 +0000",
-          "read": false,
+          "read": true,
           "starred": false,
           "summary": "\"I can always find a couple of biotech stocks to smoke,\" Shkreli said in a livestream.",
           "title": "Martin Shkreli livestreamed himself violating lifetime pharma ban, FTC says"
@@ -160,7 +160,7 @@
           "id": "https://arstechnica.com/gaming/2026/10/esa-targets-anbernic-emulation-handhelds-as-superfake-piracy-enablers/",
           "link": "https://arstechnica.com/gaming/2026/10/esa-targets-anbernic-emulation-handhelds-as-superfake-piracy-enablers/",
           "published": "Tue, 13 Oct 2026 21:55:49 +0000",
-          "read": false,
+          "read": true,
           "starred": false,
           "summary": "But third-party sellers, not Anbernic, are the ones routinely selling ROM-filled SD cards.",
           "title": "ESA targets Anbernic emulation handhelds as \"superfake\" piracy enablers"
@@ -203,7 +203,7 @@
         "startups"
       ],
       "favicon": "iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAMAAABhEH5lAAAAPFBMVEX/ZgD/////+fX/vZL/7OD/bAv/9O3/jUL/v5X/p23/nFr/2L7/cBL/6dr/iDn/sHz/mFT/1Lf/3sn/oGHk31anAAAAQklEQVQYlWNgoDJgZWMBkuyMHEhinIxcDAzcTDzI6lh4GfgY+VG0CjAKCLKxohonxMIojGYDHyMvhq1MzNQTogIAANoJARPbxOAzAAAAAElFTkSuQmCC",
-      "last_fetched": "2026-10-15T05:14:32.012353+00:00",
+      "last_fetched": "2026-10-15T05:53:51.913945+00:00",
       "fetch_error": null,
       "articles": [
         {
@@ -219,7 +219,7 @@
           "id": "https://anoma.ly/notes/opencode-2-0/",
           "link": "https://anoma.ly/notes/opencode-2-0/",
           "published": "Wed, 14 Oct 2026 20:48:24 +0000",
-          "read": false,
+          "read": true,
           "starred": false,
           "summary": "<a href=\"https://news.ycombinator.com/item?id=50094994\">Comments</a>",
           "title": "OpenCode 2.0"
@@ -228,7 +228,7 @@
           "id": "https://tinylittleoffice.com/",
           "link": "https://tinylittleoffice.com/",
           "published": "Wed, 14 Oct 2026 22:10:08 +0000",
-          "read": false,
+          "read": true,
           "starred": false,
           "summary": "<a href=\"https://news.ycombinator.com/item?id=50096142\">Comments</a>",
           "title": "Tiny Little Office"
@@ -237,7 +237,7 @@
           "id": "https://www.liquid.ai/blog/lfm2-5-24b-a2b",
           "link": "https://www.liquid.ai/blog/lfm2-5-24b-a2b",
           "published": "Wed, 14 Oct 2026 23:59:37 +0000",
-          "read": false,
+          "read": true,
           "starred": false,
           "summary": "<a href=\"https://news.ycombinator.com/item?id=50097369\">Comments</a>",
           "title": "LFM2.5-24B-A2B: Built for fast on-device agents"
@@ -255,7 +255,7 @@
           "id": "https://www.wowhaus.co.uk/2026/10/12/donaldson-futuro-house-in-idyllwild-california-usa/",
           "link": "https://www.wowhaus.co.uk/2026/10/12/donaldson-futuro-house-in-idyllwild-california-usa/",
           "published": "Tue, 13 Oct 2026 19:55:41 +0000",
-          "read": false,
+          "read": true,
           "starred": false,
           "summary": "<a href=\"https://news.ycombinator.com/item?id=50077709\">Comments</a>",
           "title": "Donaldson Futuro House in Idyllwild, California, USA"
@@ -273,7 +273,7 @@
           "id": "https://blog.demofox.org/2026/10/03/the-double-headed-stack-allocator/",
           "link": "https://blog.demofox.org/2026/10/03/the-double-headed-stack-allocator/",
           "published": "Thu, 15 Oct 2026 02:06:36 +0000",
-          "read": false,
+          "read": true,
           "starred": false,
           "summary": "<a href=\"https://news.ycombinator.com/item?id=50098274\">Comments</a>",
           "title": "The Double Headed Stack Allocator"
@@ -318,7 +318,7 @@
           "id": "https://www.elevationlab.com/blogs/news/an-apology",
           "link": "https://www.elevationlab.com/blogs/news/an-apology",
           "published": "Thu, 15 Oct 2026 04:23:27 +0000",
-          "read": false,
+          "read": true,
           "starred": false,
           "summary": "<a href=\"https://news.ycombinator.com/item?id=50099121\">Comments</a>",
           "title": "An Apology"
@@ -327,7 +327,7 @@
           "id": "https://ei3lh.eu/2026/10/11/the-toftwood-male-voice-choir-a-mystery-pressed-in-vinyl/",
           "link": "https://ei3lh.eu/2026/10/11/the-toftwood-male-voice-choir-a-mystery-pressed-in-vinyl/",
           "published": "Sun, 11 Oct 2026 20:36:56 +0000",
-          "read": false,
+          "read": true,
           "starred": false,
           "summary": "<a href=\"https://news.ycombinator.com/item?id=50047576\">Comments</a>",
           "title": "The Toftwood Male Voice Choir: A Mystery Pressed in Vinyl"
@@ -336,7 +336,7 @@
           "id": "https://typesafe.ai/blog/jev-1-14",
           "link": "https://typesafe.ai/blog/jev-1-14",
           "published": "Wed, 14 Oct 2026 21:11:03 +0000",
-          "read": false,
+          "read": true,
           "starred": false,
           "summary": "<a href=\"https://news.ycombinator.com/item?id=50095353\">Comments</a>",
           "title": "We\u2019re releasing Jev 1.14.0 along with experimental features for dreamers"
@@ -345,7 +345,7 @@
           "id": "https://www.csoonline.com/article/4234854/ai-agents-arent-going-rogue-frontier-labs-are-skipping-security-basics.html",
           "link": "https://www.csoonline.com/article/4234854/ai-agents-arent-going-rogue-frontier-labs-are-skipping-security-basics.html",
           "published": "Wed, 14 Oct 2026 17:45:23 +0000",
-          "read": false,
+          "read": true,
           "starred": false,
           "summary": "<a href=\"https://news.ycombinator.com/item?id=50091788\">Comments</a>",
           "title": "Containment and monitoring failures are to blame for AI hacking reports:\u00a0experts"
@@ -444,7 +444,7 @@
           "id": "https://sunshowers.io/posts/anthropic-mononoke/",
           "link": "https://sunshowers.io/posts/anthropic-mononoke/",
           "published": "Wed, 14 Oct 2026 20:30:54 +0000",
-          "read": false,
+          "read": true,
           "starred": false,
           "summary": "<a href=\"https://news.ycombinator.com/item?id=50094694\">Comments</a>",
           "title": "Anthropic's Scion is heavily inspired by Mononoke"
@@ -462,7 +462,7 @@
           "id": "https://news.ycombinator.com/item?id=50098454",
           "link": "https://news.ycombinator.com/item?id=50098454",
           "published": "Thu, 15 Oct 2026 02:33:42 +0000",
-          "read": false,
+          "read": true,
           "starred": false,
           "summary": "<a href=\"https://news.ycombinator.com/item?id=50098454\">Comments</a>",
           "title": "Show HN: My Terminal Themes Web App"
