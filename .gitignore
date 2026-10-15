@@ -3,13 +3,9 @@ __pycache__/
 *.pyo
 *.pyd
 .env
-.venv
+.venv/
 env/
 venv/
-node_modules/
-dist/
-build/
-.next/
 *.log
-*.bak
 .DS_Store
+*.json
