@@ -1,0 +1,482 @@
+{
+  "feeds": [
+    {
+      "url": "https://feeds.arstechnica.com/arstechnica/index",
+      "title": "Ars Technica",
+      "category": "Tech",
+      "tags": [
+        "tech",
+        "science"
+      ],
+      "favicon": "",
+      "last_fetched": "2026-10-15T05:14:27.539128+00:00",
+      "fetch_error": null,
+      "articles": [
+        {
+          "id": "https://arstechnica.com/security/2026/10/fridge-hack-costing-millions-and-sparking-fires-stemmed-from-poor-security/",
+          "link": "https://arstechnica.com/security/2026/10/fridge-hack-costing-millions-and-sparking-fires-stemmed-from-poor-security/",
+          "published": "Wed, 14 Oct 2026 21:35:09 +0000",
+          "read": false,
+          "starred": false,
+          "summary": "Incident hitting 700 supermarkets exploited outdated devices exposed to the Internet.",
+          "title": "Fridge hack costing millions and sparking fires stemmed from poor security"
+        },
+        {
+          "id": "https://arstechnica.com/gaming/2026/10/programming-is-hard-epic-games-leans-on-vibe-coding-for-its-new-launcher-app/",
+          "link": "https://arstechnica.com/gaming/2026/10/programming-is-hard-epic-games-leans-on-vibe-coding-for-its-new-launcher-app/",
+          "published": "Wed, 14 Oct 2026 21:15:56 +0000",
+          "read": false,
+          "starred": false,
+          "summary": "But the new \"Preview\" app \"will have some bugs,\" Epic warns.",
+          "title": "Epic says its new vibe-coded Epic Games Launcher is faster than Steam"
+        },
+        {
+          "id": "https://arstechnica.com/gadgets/2026/10/nato-may-redeploy-anti-drone-defenses-as-attacks-sink-more-black-sea-shipping/",
+          "link": "https://arstechnica.com/gadgets/2026/10/nato-may-redeploy-anti-drone-defenses-as-attacks-sink-more-black-sea-shipping/",
+          "published": "Wed, 14 Oct 2026 21:03:11 +0000",
+          "read": false,
+          "starred": false,
+          "summary": "Suspected Russian drones have sunk or damaged 5 ships near Bulgaria and Romania.",
+          "title": "NATO may redeploy anti-drone defenses as attacks sink more Black Sea shipping"
+        },
+        {
+          "id": "https://arstechnica.com/space/2026/10/nasas-embattled-venus-missions-are-back-on-track-after-cancellation-threat/",
+          "link": "https://arstechnica.com/space/2026/10/nasas-embattled-venus-missions-are-back-on-track-after-cancellation-threat/",
+          "published": "Wed, 14 Oct 2026 20:48:07 +0000",
+          "read": false,
+          "starred": false,
+          "summary": "\"This is great news for us. We're staffing up. We're accelerating.\"",
+          "title": "Things are finally looking up for NASA's first missions to Venus in a generation"
+        },
+        {
+          "id": "https://arstechnica.com/tech-policy/2026/10/schools-libraries-plead-with-fcc-to-scrap-idea-of-killing-2b-broadband-program/",
+          "link": "https://arstechnica.com/tech-policy/2026/10/schools-libraries-plead-with-fcc-to-scrap-idea-of-killing-2b-broadband-program/",
+          "published": "Wed, 14 Oct 2026 20:15:56 +0000",
+          "read": false,
+          "starred": false,
+          "summary": "FCC chair threatens E-Rate fund, blames schools for kids' excessive screen time.",
+          "title": "Schools across US protest FCC plan that could disconnect kids from Internet"
+        },
+        {
+          "id": "https://arstechnica.com/tech-policy/2026/10/georgia-man-sues-flock-sheriffs-office-over-alleged-alpr-fueled-retaliation/",
+          "link": "https://arstechnica.com/tech-policy/2026/10/georgia-man-sues-flock-sheriffs-office-over-alleged-alpr-fueled-retaliation/",
+          "published": "Wed, 14 Oct 2026 19:53:01 +0000",
+          "read": false,
+          "starred": false,
+          "summary": "Plaintiff claims cameras enabled warrantless tracking and monitoring after he previously sued over excessive force.",
+          "title": "Georgia man sues Flock, sheriff's office over alleged ALPR-fueled retaliation"
+        },
+        {
+          "id": "https://arstechnica.com/cars/2026/10/software-development-and-rules-stability-prototype-racing-in-2030/",
+          "link": "https://arstechnica.com/cars/2026/10/software-development-and-rules-stability-prototype-racing-in-2030/",
+          "published": "Wed, 14 Oct 2026 19:44:26 +0000",
+          "read": false,
+          "starred": false,
+          "summary": "With the end of IMSA\u2019s 2026 season, we have thoughts about the future of the sport.",
+          "title": "Software development and rules stability: Prototype racing in 2030"
+        },
+        {
+          "id": "https://arstechnica.com/culture/2026/10/greta-gerwig-channels-bowie-in-psychedelic-the-magicians-nephew-trailer/",
+          "link": "https://arstechnica.com/culture/2026/10/greta-gerwig-channels-bowie-in-psychedelic-the-magicians-nephew-trailer/",
+          "published": "Wed, 14 Oct 2026 19:10:58 +0000",
+          "read": false,
+          "starred": false,
+          "summary": "\"Have you ever seen a world born?\"",
+          "title": "Greta Gerwig channels Bowie in psychedelic The Magician's Nephew trailer"
+        },
+        {
+          "id": "https://arstechnica.com/science/2026/10/researchers-use-ai-to-design-proteins-that-cut-up-other-proteins/",
+          "link": "https://arstechnica.com/science/2026/10/researchers-use-ai-to-design-proteins-that-cut-up-other-proteins/",
+          "published": "Wed, 14 Oct 2026 17:10:15 +0000",
+          "read": false,
+          "starred": false,
+          "summary": "AI design tools make proteins that break bonds that are stable for hundreds of years.",
+          "title": "Researchers use AI to design proteins that cut up other proteins"
+        },
+        {
+          "id": "https://arstechnica.com/tech-policy/2026/10/fbi-arrests-openai-engineer-suspected-of-planting-bug-in-conference-room/",
+          "link": "https://arstechnica.com/tech-policy/2026/10/fbi-arrests-openai-engineer-suspected-of-planting-bug-in-conference-room/",
+          "published": "Wed, 14 Oct 2026 16:41:49 +0000",
+          "read": false,
+          "starred": false,
+          "summary": "OpenAI engineer faces 5 years and $250K fine as FBI lobs foreign spy charges.",
+          "title": "Recording device hidden in toilet paper found in top-secret OpenAI meeting room"
+        },
+        {
+          "id": "https://arstechnica.com/gaming/2026/10/legendary-fps-level-designer-richard-levelord-gray-passes-away-at-68/",
+          "link": "https://arstechnica.com/gaming/2026/10/legendary-fps-level-designer-richard-levelord-gray-passes-away-at-68/",
+          "published": "Wed, 14 Oct 2026 16:02:08 +0000",
+          "read": false,
+          "starred": false,
+          "summary": "Tributes pour in for the man behind iconic <em>Duke Nukem 3D</em> levels and much more.",
+          "title": "Legendary FPS level designer Richard \"Levelord\" Gray dies at 68"
+        },
+        {
+          "id": "https://arstechnica.com/gadgets/2026/10/ukraine-blindsided-by-starlink-throttling-restrictions-and-intelligence-gaps/",
+          "link": "https://arstechnica.com/gadgets/2026/10/ukraine-blindsided-by-starlink-throttling-restrictions-and-intelligence-gaps/",
+          "published": "Wed, 14 Oct 2026 13:56:11 +0000",
+          "read": false,
+          "starred": false,
+          "summary": "Kyiv\u2019s forces experience connectivity problems on Elon Musk\u2019s satellite network.",
+          "title": "Ukraine blindsided by Starlink throttling restrictions and intelligence gaps"
+        },
+        {
+          "id": "https://arstechnica.com/security/2026/10/anthropic-warns-small-ai-models-could-self-replicate-through-iot-devices/",
+          "link": "https://arstechnica.com/security/2026/10/anthropic-warns-small-ai-models-could-self-replicate-through-iot-devices/",
+          "published": "Wed, 14 Oct 2026 12:55:06 +0000",
+          "read": false,
+          "starred": false,
+          "summary": "\"Small weight-based replicators\" could usher in a new generation of computer worms.",
+          "title": "Anthropic warns small AI models could self-replicate through IoT devices"
+        },
+        {
+          "id": "https://arstechnica.com/gadgets/2026/10/the-internets-undersea-backbone-is-slipping-into-to-the-danger-zone/",
+          "link": "https://arstechnica.com/gadgets/2026/10/the-internets-undersea-backbone-is-slipping-into-to-the-danger-zone/",
+          "published": "Wed, 14 Oct 2026 11:15:24 +0000",
+          "read": false,
+          "starred": false,
+          "summary": "Elisabeth Braw\u2019s book <em>Undersea War</em> on rising risks for undersea infrastructure.",
+          "title": "The Internet\u2019s undersea backbone is slipping into the danger zone"
+        },
+        {
+          "id": "https://arstechnica.com/tech-policy/2026/10/openai-google-pushing-new-ai-models-easily-tricked-into-making-nudes-researchers-say/",
+          "link": "https://arstechnica.com/tech-policy/2026/10/openai-google-pushing-new-ai-models-easily-tricked-into-making-nudes-researchers-say/",
+          "published": "Wed, 14 Oct 2026 11:00:30 +0000",
+          "read": false,
+          "starred": false,
+          "summary": "Attack method exposes flaws in OpenAI, Google safeguards against AI nudes.",
+          "title": "OpenAI, Google pushing new AI models easily tricked into making nudes, researchers say"
+        },
+        {
+          "id": "https://arstechnica.com/health/2026/10/martin-shkreli-livestreamed-himself-violating-lifetime-pharma-ban-ftc-says/",
+          "link": "https://arstechnica.com/health/2026/10/martin-shkreli-livestreamed-himself-violating-lifetime-pharma-ban-ftc-says/",
+          "published": "Tue, 13 Oct 2026 22:48:12 +0000",
+          "read": false,
+          "starred": false,
+          "summary": "\"I can always find a couple of biotech stocks to smoke,\" Shkreli said in a livestream.",
+          "title": "Martin Shkreli livestreamed himself violating lifetime pharma ban, FTC says"
+        },
+        {
+          "id": "https://arstechnica.com/gaming/2026/10/esa-targets-anbernic-emulation-handhelds-as-superfake-piracy-enablers/",
+          "link": "https://arstechnica.com/gaming/2026/10/esa-targets-anbernic-emulation-handhelds-as-superfake-piracy-enablers/",
+          "published": "Tue, 13 Oct 2026 21:55:49 +0000",
+          "read": false,
+          "starred": false,
+          "summary": "But third-party sellers, not Anbernic, are the ones routinely selling ROM-filled SD cards.",
+          "title": "ESA targets Anbernic emulation handhelds as \"superfake\" piracy enablers"
+        },
+        {
+          "id": "https://arstechnica.com/information-technology/2026/10/topgolf-saved-over-11-3-million-after-leaving-vmware/",
+          "link": "https://arstechnica.com/information-technology/2026/10/topgolf-saved-over-11-3-million-after-leaving-vmware/",
+          "published": "Tue, 13 Oct 2026 21:33:43 +0000",
+          "read": false,
+          "starred": false,
+          "summary": "Topgolf and VMware \"ran deep\" before the migration.",
+          "title": "Topgolf saved over $11.3 million after leaving VMware"
+        },
+        {
+          "id": "https://arstechnica.com/tech-policy/2026/10/trumps-taxpayer-funded-ads-kept-airing-on-tv-the-day-after-judge-blocked-them/",
+          "link": "https://arstechnica.com/tech-policy/2026/10/trumps-taxpayer-funded-ads-kept-airing-on-tv-the-day-after-judge-blocked-them/",
+          "published": "Tue, 13 Oct 2026 19:50:37 +0000",
+          "read": false,
+          "starred": false,
+          "summary": "US attorney apologized to court, said government has stopped running Trump ads.",
+          "title": "Trump commercial railing against his enemies kept airing after court blocked it"
+        },
+        {
+          "id": "https://arstechnica.com/tech-policy/2026/10/disney-offers-20m-for-character-ais-scandal-plagued-chatbot-tech/",
+          "link": "https://arstechnica.com/tech-policy/2026/10/disney-offers-20m-for-character-ais-scandal-plagued-chatbot-tech/",
+          "published": "Tue, 13 Oct 2026 18:23:33 +0000",
+          "read": false,
+          "starred": false,
+          "summary": "Disney may acquire tech from one of the first chatbot makers linked to child suicide.",
+          "title": "Disney offers $20M for Character.AI\u2019s scandal-plagued chatbot tech"
+        }
+      ]
+    },
+    {
+      "url": "https://news.ycombinator.com/rss",
+      "title": "Hacker News",
+      "category": "Tech",
+      "tags": [
+        "tech",
+        "startups"
+      ],
+      "favicon": "iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAMAAABhEH5lAAAAPFBMVEX/ZgD/////+fX/vZL/7OD/bAv/9O3/jUL/v5X/p23/nFr/2L7/cBL/6dr/iDn/sHz/mFT/1Lf/3sn/oGHk31anAAAAQklEQVQYlWNgoDJgZWMBkuyMHEhinIxcDAzcTDzI6lh4GfgY+VG0CjAKCLKxohonxMIojGYDHyMvhq1MzNQTogIAANoJARPbxOAzAAAAAElFTkSuQmCC",
+      "last_fetched": "2026-10-15T05:14:32.012353+00:00",
+      "fetch_error": null,
+      "articles": [
+        {
+          "id": "https://jjmaxwell4.com/writing/things-to-know-when-you-get-cancer/",
+          "link": "https://jjmaxwell4.com/writing/things-to-know-when-you-get-cancer/",
+          "published": "Wed, 14 Oct 2026 19:26:30 +0000",
+          "read": false,
+          "starred": false,
+          "summary": "<a href=\"https://news.ycombinator.com/item?id=50093568\">Comments</a>",
+          "title": "Things to know when you get cancer"
+        },
+        {
+          "id": "https://anoma.ly/notes/opencode-2-0/",
+          "link": "https://anoma.ly/notes/opencode-2-0/",
+          "published": "Wed, 14 Oct 2026 20:48:24 +0000",
+          "read": false,
+          "starred": false,
+          "summary": "<a href=\"https://news.ycombinator.com/item?id=50094994\">Comments</a>",
+          "title": "OpenCode 2.0"
+        },
+        {
+          "id": "https://tinylittleoffice.com/",
+          "link": "https://tinylittleoffice.com/",
+          "published": "Wed, 14 Oct 2026 22:10:08 +0000",
+          "read": false,
+          "starred": false,
+          "summary": "<a href=\"https://news.ycombinator.com/item?id=50096142\">Comments</a>",
+          "title": "Tiny Little Office"
+        },
+        {
+          "id": "https://www.liquid.ai/blog/lfm2-5-24b-a2b",
+          "link": "https://www.liquid.ai/blog/lfm2-5-24b-a2b",
+          "published": "Wed, 14 Oct 2026 23:59:37 +0000",
+          "read": false,
+          "starred": false,
+          "summary": "<a href=\"https://news.ycombinator.com/item?id=50097369\">Comments</a>",
+          "title": "LFM2.5-24B-A2B: Built for fast on-device agents"
+        },
+        {
+          "id": "https://mapwriting.substack.com/p/dentists",
+          "link": "https://mapwriting.substack.com/p/dentists",
+          "published": "Mon, 12 Oct 2026 02:21:54 +0000",
+          "read": false,
+          "starred": false,
+          "summary": "<a href=\"https://news.ycombinator.com/item?id=50050553\">Comments</a>",
+          "title": "Do dentists know what they're doing?"
+        },
+        {
+          "id": "https://www.wowhaus.co.uk/2026/10/12/donaldson-futuro-house-in-idyllwild-california-usa/",
+          "link": "https://www.wowhaus.co.uk/2026/10/12/donaldson-futuro-house-in-idyllwild-california-usa/",
+          "published": "Tue, 13 Oct 2026 19:55:41 +0000",
+          "read": false,
+          "starred": false,
+          "summary": "<a href=\"https://news.ycombinator.com/item?id=50077709\">Comments</a>",
+          "title": "Donaldson Futuro House in Idyllwild, California, USA"
+        },
+        {
+          "id": "https://kennedn.com/blog/posts/glitching/",
+          "link": "https://kennedn.com/blog/posts/glitching/",
+          "published": "Tue, 13 Oct 2026 12:33:18 +0000",
+          "read": false,
+          "starred": false,
+          "summary": "<a href=\"https://news.ycombinator.com/item?id=50070661\">Comments</a>",
+          "title": "It took me nine years to hack my Xbox 360"
+        },
+        {
+          "id": "https://blog.demofox.org/2026/10/03/the-double-headed-stack-allocator/",
+          "link": "https://blog.demofox.org/2026/10/03/the-double-headed-stack-allocator/",
+          "published": "Thu, 15 Oct 2026 02:06:36 +0000",
+          "read": false,
+          "starred": false,
+          "summary": "<a href=\"https://news.ycombinator.com/item?id=50098274\">Comments</a>",
+          "title": "The Double Headed Stack Allocator"
+        },
+        {
+          "id": "https://www.dataforprogress.org/blog/2026/9/29/americans-social-activity-has-steeply-declined-in-the-past-30-years",
+          "link": "https://www.dataforprogress.org/blog/2026/9/29/americans-social-activity-has-steeply-declined-in-the-past-30-years",
+          "published": "Wed, 14 Oct 2026 16:09:00 +0000",
+          "read": false,
+          "starred": false,
+          "summary": "<a href=\"https://news.ycombinator.com/item?id=50089921\">Comments</a>",
+          "title": "Americans' social activity has steeply declined in the past 30 years"
+        },
+        {
+          "id": "https://sebsite.pw/w/20261012-notstdc.html",
+          "link": "https://sebsite.pw/w/20261012-notstdc.html",
+          "published": "Tue, 13 Oct 2026 13:36:21 +0000",
+          "read": false,
+          "starred": false,
+          "summary": "<a href=\"https://news.ycombinator.com/item?id=50071546\">Comments</a>",
+          "title": "Your C is not standard C"
+        },
+        {
+          "id": "https://go.dev/blog/http-connection-reuse",
+          "link": "https://go.dev/blog/http-connection-reuse",
+          "published": "Wed, 14 Oct 2026 16:29:33 +0000",
+          "read": false,
+          "starred": false,
+          "summary": "<a href=\"https://news.ycombinator.com/item?id=50090369\">Comments</a>",
+          "title": "Better HTTP/1 connection reuse in Go 1.27"
+        },
+        {
+          "id": "https://catchabird.com",
+          "link": "https://catchabird.com",
+          "published": "Mon, 12 Oct 2026 08:51:18 +0000",
+          "read": false,
+          "starred": false,
+          "summary": "<a href=\"https://news.ycombinator.com/item?id=50053384\">Comments</a>",
+          "title": "Catch a Bird \u2013 I made it for my own sanity"
+        },
+        {
+          "id": "https://www.elevationlab.com/blogs/news/an-apology",
+          "link": "https://www.elevationlab.com/blogs/news/an-apology",
+          "published": "Thu, 15 Oct 2026 04:23:27 +0000",
+          "read": false,
+          "starred": false,
+          "summary": "<a href=\"https://news.ycombinator.com/item?id=50099121\">Comments</a>",
+          "title": "An Apology"
+        },
+        {
+          "id": "https://ei3lh.eu/2026/10/11/the-toftwood-male-voice-choir-a-mystery-pressed-in-vinyl/",
+          "link": "https://ei3lh.eu/2026/10/11/the-toftwood-male-voice-choir-a-mystery-pressed-in-vinyl/",
+          "published": "Sun, 11 Oct 2026 20:36:56 +0000",
+          "read": false,
+          "starred": false,
+          "summary": "<a href=\"https://news.ycombinator.com/item?id=50047576\">Comments</a>",
+          "title": "The Toftwood Male Voice Choir: A Mystery Pressed in Vinyl"
+        },
+        {
+          "id": "https://typesafe.ai/blog/jev-1-14",
+          "link": "https://typesafe.ai/blog/jev-1-14",
+          "published": "Wed, 14 Oct 2026 21:11:03 +0000",
+          "read": false,
+          "starred": false,
+          "summary": "<a href=\"https://news.ycombinator.com/item?id=50095353\">Comments</a>",
+          "title": "We\u2019re releasing Jev 1.14.0 along with experimental features for dreamers"
+        },
+        {
+          "id": "https://www.csoonline.com/article/4234854/ai-agents-arent-going-rogue-frontier-labs-are-skipping-security-basics.html",
+          "link": "https://www.csoonline.com/article/4234854/ai-agents-arent-going-rogue-frontier-labs-are-skipping-security-basics.html",
+          "published": "Wed, 14 Oct 2026 17:45:23 +0000",
+          "read": false,
+          "starred": false,
+          "summary": "<a href=\"https://news.ycombinator.com/item?id=50091788\">Comments</a>",
+          "title": "Containment and monitoring failures are to blame for AI hacking reports:\u00a0experts"
+        },
+        {
+          "id": "https://nytpu.com/gemlog/2026-03-18",
+          "link": "https://nytpu.com/gemlog/2026-03-18",
+          "published": "Wed, 14 Oct 2026 19:29:12 +0000",
+          "read": false,
+          "starred": false,
+          "summary": "<a href=\"https://news.ycombinator.com/item?id=50093612\">Comments</a>",
+          "title": "Fancy Curl Sites"
+        },
+        {
+          "id": "https://petal.live/",
+          "link": "https://petal.live/",
+          "published": "Wed, 14 Oct 2026 18:23:14 +0000",
+          "read": false,
+          "starred": false,
+          "summary": "<a href=\"https://news.ycombinator.com/item?id=50092470\">Comments</a>",
+          "title": "Show HN: Petal, open-source CoScreen/ScreenHero finally free"
+        },
+        {
+          "id": "https://news.ycombinator.com/item?id=50067325",
+          "link": "https://news.ycombinator.com/item?id=50067325",
+          "published": "Tue, 13 Oct 2026 05:54:01 +0000",
+          "read": false,
+          "starred": false,
+          "summary": "<a href=\"https://news.ycombinator.com/item?id=50067325\">Comments</a>",
+          "title": "Ask HN: CAD for wood working with LLM support?"
+        },
+        {
+          "id": "https://phloem.stemdeck.app/",
+          "link": "https://phloem.stemdeck.app/",
+          "published": "Mon, 12 Oct 2026 10:52:25 +0000",
+          "read": false,
+          "starred": false,
+          "summary": "<a href=\"https://news.ycombinator.com/item?id=50054465\">Comments</a>",
+          "title": "Phloem: Git history grown like a slime mold"
+        },
+        {
+          "id": "https://oxide.computer/blog/voxel-labs",
+          "link": "https://oxide.computer/blog/voxel-labs",
+          "published": "Wed, 14 Oct 2026 18:21:14 +0000",
+          "read": false,
+          "starred": false,
+          "summary": "<a href=\"https://news.ycombinator.com/item?id=50092423\">Comments</a>",
+          "title": "Virtual Oxide Labs: Emulating a Full Oxide Rack"
+        },
+        {
+          "id": "https://blog.apnic.net/2026/10/14/submarine-cable-resilience/",
+          "link": "https://blog.apnic.net/2026/10/14/submarine-cable-resilience/",
+          "published": "Wed, 14 Oct 2026 15:31:15 +0000",
+          "read": false,
+          "starred": false,
+          "summary": "<a href=\"https://news.ycombinator.com/item?id=50089229\">Comments</a>",
+          "title": "Submarine cable resilience"
+        },
+        {
+          "id": "https://www.not-ship.com/how-amazon-pushes-up-prices-all-across-the-internet/",
+          "link": "https://www.not-ship.com/how-amazon-pushes-up-prices-all-across-the-internet/",
+          "published": "Wed, 14 Oct 2026 09:28:17 +0000",
+          "read": false,
+          "starred": false,
+          "summary": "<a href=\"https://news.ycombinator.com/item?id=50084757\">Comments</a>",
+          "title": "How Amazon pushes up prices all across the Internet"
+        },
+        {
+          "id": "https://dpa-international.com/politics/urn:newsml:dpa.com:20090101:261014-930-839530/",
+          "link": "https://dpa-international.com/politics/urn:newsml:dpa.com:20090101:261014-930-839530/",
+          "published": "Wed, 14 Oct 2026 18:37:21 +0000",
+          "read": false,
+          "starred": false,
+          "summary": "<a href=\"https://news.ycombinator.com/item?id=50092730\">Comments</a>",
+          "title": "Fire at Starlink site in Bulgaria after suspected sabotage in Poland"
+        },
+        {
+          "id": "https://theconsensus.dev/blog/2026/10/14/has-ai-tells.html?focus=1",
+          "link": "https://theconsensus.dev/blog/2026/10/14/has-ai-tells.html?focus=1",
+          "published": "Wed, 14 Oct 2026 16:52:42 +0000",
+          "read": false,
+          "starred": false,
+          "summary": "<a href=\"https://news.ycombinator.com/item?id=50090799\">Comments</a>",
+          "title": "Has AI tells"
+        },
+        {
+          "id": "https://alexwennerberg.com/blog/2026-10-13-long.html",
+          "link": "https://alexwennerberg.com/blog/2026-10-13-long.html",
+          "published": "Wed, 14 Oct 2026 06:02:16 +0000",
+          "read": false,
+          "starred": false,
+          "summary": "<a href=\"https://news.ycombinator.com/item?id=50083028\">Comments</a>",
+          "title": "Why is every rationalist blog post way too long?"
+        },
+        {
+          "id": "https://sunshowers.io/posts/anthropic-mononoke/",
+          "link": "https://sunshowers.io/posts/anthropic-mononoke/",
+          "published": "Wed, 14 Oct 2026 20:30:54 +0000",
+          "read": false,
+          "starred": false,
+          "summary": "<a href=\"https://news.ycombinator.com/item?id=50094694\">Comments</a>",
+          "title": "Anthropic's Scion is heavily inspired by Mononoke"
+        },
+        {
+          "id": "https://scotthelme.co.uk/passkeys-are-not-a-trap/",
+          "link": "https://scotthelme.co.uk/passkeys-are-not-a-trap/",
+          "published": "Wed, 14 Oct 2026 15:15:45 +0000",
+          "read": false,
+          "starred": false,
+          "summary": "<a href=\"https://news.ycombinator.com/item?id=50088935\">Comments</a>",
+          "title": "Passkeys are not a trap"
+        },
+        {
+          "id": "https://news.ycombinator.com/item?id=50098454",
+          "link": "https://news.ycombinator.com/item?id=50098454",
+          "published": "Thu, 15 Oct 2026 02:33:42 +0000",
+          "read": false,
+          "starred": false,
+          "summary": "<a href=\"https://news.ycombinator.com/item?id=50098454\">Comments</a>",
+          "title": "Show HN: My Terminal Themes Web App"
+        },
+        {
+          "id": "https://clova.email/",
+          "link": "https://clova.email/",
+          "published": "Wed, 14 Oct 2026 17:00:59 +0000",
+          "read": false,
+          "starred": false,
+          "summary": "<a href=\"https://news.ycombinator.com/item?id=50090932\">Comments</a>",
+          "title": "Show HN: I wrote an email app that accepts only one sender per inbox"
+        }
+      ]
+    }
+  ]
+}
