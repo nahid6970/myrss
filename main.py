@@ -4,6 +4,7 @@ import json
 import base64
 import urllib.request
 import urllib.parse
+import re
 from html import escape
 from html.parser import HTMLParser
 from datetime import datetime, timezone, timedelta
@@ -22,7 +23,7 @@ from PyQt6.QtWidgets import (
     QLabel, QPushButton, QLineEdit, QGroupBox, QSplitter,
     QTreeWidget, QTreeWidgetItem, QListWidget, QListWidgetItem,
     QTextBrowser, QDialog, QFormLayout, QSpinBox, QMessageBox,
-    QMenu, QSystemTrayIcon, QFrame, QHeaderView
+    QMenu, QSystemTrayIcon, QFrame, QHeaderView, QPlainTextEdit
 )
 from PyQt6.QtCore import Qt, QTimer, QThread, pyqtSignal, QUrl
 from PyQt6.QtGui import QIcon, QPixmap, QDesktopServices, QColor
@@ -366,8 +367,11 @@ class ArticleBodyParser(HTMLParser):
     SKIP_TAGS = {"script", "style", "nav", "footer", "header", "aside", "form", "noscript", "iframe"}
     ARTICLE_CLASSES = {"entry-content", "post-content", "article-content", "article-body", "post-body", "jeg_post_content", "post_content"}
 
-    def __init__(self):
+    def __init__(self, selectors=None):
         super().__init__(convert_charrefs=True)
+        self.selectors = [s.strip() for s in (selectors or []) if s.strip()]
+        self.selector_matches = {selector: [] for selector in self.selectors}
+        self.captures = []
         self.started = False
         self.depth = 0
         self.skip_depth = 0
@@ -375,6 +379,9 @@ class ArticleBodyParser(HTMLParser):
 
     def handle_starttag(self, tag, attrs):
         attrs = dict(attrs)
+        if self.selectors:
+            self._custom_start(tag, attrs)
+            return
         classes = set((attrs.get("class") or "").split())
         if not self.started and (tag == "article" or classes & self.ARTICLE_CLASSES):
             self.started = True
@@ -391,6 +398,9 @@ class ArticleBodyParser(HTMLParser):
             self.depth += 1
 
     def handle_endtag(self, tag):
+        if self.selectors:
+            self._custom_end(tag)
+            return
         if not self.started or self.depth <= 0:
             return
         if tag in self.VOID_TAGS:
@@ -403,6 +413,9 @@ class ArticleBodyParser(HTMLParser):
 
     def handle_startendtag(self, tag, attrs):
         attrs = dict(attrs)
+        if self.selectors:
+            self._custom_start(tag, attrs, self_closing=True)
+            return
         if self.started and self.depth > 0:
             if self.skip_depth == 0:
                 self._append_tag(tag, attrs)
@@ -412,42 +425,132 @@ class ArticleBodyParser(HTMLParser):
         self.handle_starttag(tag, attrs)
 
     def handle_data(self, data):
+        if self.selectors:
+            for capture in self.captures:
+                if capture["skip_depth"] == 0:
+                    capture["parts"].append(escape(data))
+            return
         if self.started and self.depth > 0 and self.skip_depth == 0:
             self.parts.append(escape(data))
 
     def handle_entityref(self, name):
+        if self.selectors:
+            for capture in self.captures:
+                if capture["skip_depth"] == 0:
+                    capture["parts"].append(f"&{name};")
+            return
         if self.started and self.depth > 0 and self.skip_depth == 0:
             self.parts.append(f"&{name};")
 
     def handle_charref(self, name):
+        if self.selectors:
+            for capture in self.captures:
+                if capture["skip_depth"] == 0:
+                    capture["parts"].append(f"&#{name};")
+            return
         if self.started and self.depth > 0 and self.skip_depth == 0:
             self.parts.append(f"&#{name};")
 
     def _append_tag(self, tag, attrs):
+        self.parts.append(self._format_tag(tag, attrs))
+
+    @staticmethod
+    def _format_tag(tag, attrs):
         safe_attrs = []
         for name in ("href", "src", "alt", "title"):
             value = attrs.get(name)
             if value:
                 safe_attrs.append(f'{name}="{escape(value, quote=True)}"')
         suffix = f" {' '.join(safe_attrs)}" if safe_attrs else ""
-        self.parts.append(f"<{tag}{suffix}>")
+        return f"<{tag}{suffix}>"
+
+    @staticmethod
+    def _selector_matches(selector, tag, attrs):
+        selector = selector.strip()
+        if not selector:
+            return False
+        html_tag = re.fullmatch(r"<\s*([A-Za-z][\w-]*)\s*>", selector)
+        if html_tag:
+            selector = html_tag.group(1)
+        if selector.startswith("#"):
+            return attrs.get("id") == selector[1:]
+        if selector.startswith("."):
+            return selector[1:] in (attrs.get("class") or "").split()
+        match = re.fullmatch(r"([A-Za-z][\w-]*)(?:\.([\w-]+))?", selector)
+        if not match:
+            return False
+        wanted_tag, wanted_class = match.groups()
+        return tag.lower() == wanted_tag.lower() and (not wanted_class or wanted_class in (attrs.get("class") or "").split())
+
+    def _custom_start(self, tag, attrs, self_closing=False):
+        void = tag in self.VOID_TAGS
+        for capture in self.captures:
+            if capture["skip_depth"]:
+                if tag in self.SKIP_TAGS:
+                    capture["skip_depth"] += 1
+            else:
+                capture["parts"].append(self._format_tag(tag, attrs))
+                if tag in self.SKIP_TAGS:
+                    capture["skip_depth"] = 1
+            if self_closing and not void:
+                capture["parts"].append(f"</{tag}>")
+            elif not void:
+                capture["depth"] += 1
+
+        if tag not in self.SKIP_TAGS:
+            for selector in self.selectors:
+                if self._selector_matches(selector, tag, attrs):
+                    parts = [self._format_tag(tag, attrs)]
+                    if self_closing and not void:
+                        parts.append(f"</{tag}>")
+                    if self_closing or void:
+                        self.selector_matches[selector].append("".join(parts))
+                    else:
+                        self.captures.append({"selector": selector, "depth": 1, "skip_depth": 0, "parts": parts})
+
+    def _custom_end(self, tag, is_self_closing=False):
+        if tag in self.VOID_TAGS and not is_self_closing:
+            return
+        remaining = []
+        for capture in self.captures:
+            if capture["skip_depth"]:
+                if tag in self.SKIP_TAGS:
+                    capture["skip_depth"] -= 1
+            else:
+                capture["parts"].append(f"</{tag}>")
+            if not is_self_closing:
+                capture["depth"] -= 1
+            if capture["depth"] <= 0:
+                self.selector_matches[capture["selector"]].append("".join(capture["parts"]))
+            else:
+                remaining.append(capture)
+        self.captures = remaining
+
+    def custom_html(self):
+        chunks = []
+        for selector in self.selectors:
+            chunks.extend(self.selector_matches.get(selector, []))
+        return "<br><br>".join(chunks)
 
 
 class ArticlePageFetchWorker(QThread):
     fetched = pyqtSignal(str, str, str)
 
-    def __init__(self, url):
+    def __init__(self, url, selectors=None):
         super().__init__()
         self.url = url
+        self.selectors = selectors or []
 
     def run(self):
         try:
             request = urllib.request.Request(self.url, headers={"User-Agent": "myRSS/1.0 (article reader)"})
             with urllib.request.urlopen(request, timeout=12) as response:
                 page = response.read(4_000_000).decode(response.headers.get_content_charset() or "utf-8", errors="replace")
-            parser = ArticleBodyParser()
+            parser = ArticleBodyParser(self.selectors)
             parser.feed(page)
-            self.fetched.emit(self.url, "".join(parser.parts).strip(), "")
+            content = parser.custom_html() if self.selectors else "".join(parser.parts).strip()
+            error = "No configured selectors matched the page." if self.selectors and not content.strip() else ""
+            self.fetched.emit(self.url, content.strip(), error)
         except Exception as exc:
             self.fetched.emit(self.url, "", str(exc))
 
@@ -504,11 +607,12 @@ class AddEditFeedDialog(QDialog):
         self.feed = feed or {}
         is_edit = bool(feed)
         self.setWindowTitle("// EDIT INTEL STREAM" if is_edit else "// NEW INTEL STREAM")
-        self.resize(460, 260)
+        self.resize(600, 500)
 
         layout = QVBoxLayout(self)
         grp = QGroupBox("FEED SPECIFICATIONS")
         form = QFormLayout()
+        form.setFieldGrowthPolicy(QFormLayout.FieldGrowthPolicy.ExpandingFieldsGrow)
 
         self.url_input = QLineEdit(self.feed.get("url", ""))
         self.url_input.setPlaceholderText("https://domain/feed.xml")
@@ -517,11 +621,24 @@ class AddEditFeedDialog(QDialog):
         self.cat_input = QLineEdit(self.feed.get("category", "General"))
         self.tags_input = QLineEdit(", ".join(self.feed.get("tags", [])))
         self.tags_input.setPlaceholderText("tech, cyber, ai")
+        self.selectors_input = QPlainTextEdit("\n".join(self.feed.get("article_selectors", [])))
+        self.selectors_input.setPlaceholderText("h1\np\n.entry-content")
+        self.selectors_input.setMinimumHeight(90)
+        selectors_field = QWidget()
+        selectors_layout = QVBoxLayout(selectors_field)
+        selectors_layout.setContentsMargins(0, 0, 0, 0)
+        selectors_layout.setSpacing(4)
+        selectors_layout.addWidget(self.selectors_input)
+        selectors_help = QLabel("One selector per line, in display order. Supports tag, .class, #id, and tag.class. Leave blank for automatic extraction.")
+        selectors_help.setWordWrap(True)
+        selectors_help.setStyleSheet(f"color: {CP_SUBTEXT}; font-size: 9pt;")
+        selectors_layout.addWidget(selectors_help)
 
         form.addRow("URL:", self.url_input)
         form.addRow("TITLE:", self.title_input)
         form.addRow("CATEGORY:", self.cat_input)
         form.addRow("TAGS:", self.tags_input)
+        form.addRow("ARTICLE SELECTORS:", selectors_field)
         grp.setLayout(form)
 
         btn_box = QHBoxLayout()
@@ -547,6 +664,12 @@ class AddEditFeedDialog(QDialog):
         self.feed["category"] = self.cat_input.text().strip() or "General"
         raw_tags = [t.strip() for t in self.tags_input.text().split(",") if t.strip()]
         self.feed["tags"] = raw_tags
+        selectors = []
+        for line in self.selectors_input.toPlainText().splitlines():
+            for selector in line.split():
+                html_tag = re.fullmatch(r"<\s*([A-Za-z][\w-]*)\s*>", selector)
+                selectors.append(html_tag.group(1) if html_tag else selector)
+        self.feed["article_selectors"] = selectors
         self.accept()
 
 # ---------------------------------------------------------
@@ -981,7 +1104,7 @@ class MyRSSApp(QMainWindow):
         self.display_article_content(art, feed)
         if art.get("link") and not art.get("full_content"):
             self.reader_meta.setText(self.reader_meta.text() + " // LOADING FULL ARTICLE…")
-            worker = ArticlePageFetchWorker(art["link"])
+            worker = ArticlePageFetchWorker(art["link"], feed.get("article_selectors", []))
             self.article_page_workers.append(worker)
             worker.fetched.connect(self.on_article_page_fetched)
             worker.finished.connect(lambda current=worker: self.article_page_workers.remove(current) if current in self.article_page_workers else None)
@@ -1143,10 +1266,19 @@ class MyRSSApp(QMainWindow):
             if action == act_sync:
                 self.sync_single_feed(feed)
             elif action == act_edit:
+                old_selectors = list(feed.get("article_selectors", []))
                 dlg = AddEditFeedDialog(self, feed)
                 if dlg.exec():
+                    selectors_changed = dlg.feed.get("article_selectors", []) != old_selectors
+                    if selectors_changed:
+                        for article in feed.get("articles", []):
+                            article.pop("full_content", None)
                     self.save_feeds_data()
                     self.populate_sidebar()
+                    if selectors_changed and self.current_article and self.current_article[1] is feed:
+                        current_item = self.article_list_widget.currentItem()
+                        if current_item:
+                            self.on_article_selected(current_item)
             elif action == act_mark:
                 for a in feed.get("articles", []):
                     a["read"] = True
