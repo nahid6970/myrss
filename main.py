@@ -300,9 +300,10 @@ class FeedFetchWorker(QThread):
     finished_feed = pyqtSignal(dict, list, str, str, str)  # feed_data, new_articles, error, title, favicon
     all_done = pyqtSignal(int)
 
-    def __init__(self, feeds):
+    def __init__(self, feeds, retention_days=7):
         super().__init__()
         self.feeds = feeds
+        self.retention_days = retention_days
 
     def run(self):
         total_new_items = 0
@@ -352,8 +353,13 @@ class FeedFetchWorker(QThread):
             except Exception as e:
                 error_msg = str(e)
 
-            existing_ids = {a.get("id", a.get("link")) for a in feed.get("articles", [])}
-            new_articles = [a for a in fetched_articles if (a.get("id") or a.get("link")) not in existing_ids]
+            existing_ids = {a.get("id") or a.get("link") for a in feed.get("articles", [])}
+            cutoff = datetime.now(timezone.utc) - timedelta(days=self.retention_days)
+            new_articles = [
+                article for article in fetched_articles
+                if (article.get("id") or article.get("link")) not in existing_ids
+                and parse_date(article.get("published")) >= cutoff
+            ]
             total_new_items += len(new_articles)
 
             self.finished_feed.emit(feed, new_articles, error_msg or "", feed_title, favicon)
@@ -1337,7 +1343,7 @@ class MyRSSApp(QMainWindow):
             return
 
         self.status_bar_lbl.setText("// CONTACTING INTEL NODES... SYNCING")
-        self.fetch_worker = FeedFetchWorker(self.feeds)
+        self.fetch_worker = FeedFetchWorker(self.feeds, self.settings.get("retention_days", 7))
         self.fetch_worker.finished_feed.connect(self.on_feed_sync_finished)
         self.fetch_worker.all_done.connect(self.on_all_feeds_synced)
         self.fetch_worker.start()
@@ -1345,7 +1351,7 @@ class MyRSSApp(QMainWindow):
     def sync_single_feed(self, feed):
         if self.fetch_worker and self.fetch_worker.isRunning():
             return
-        self.fetch_worker = FeedFetchWorker([feed])
+        self.fetch_worker = FeedFetchWorker([feed], self.settings.get("retention_days", 7))
         self.fetch_worker.finished_feed.connect(self.on_feed_sync_finished)
         self.fetch_worker.all_done.connect(self.on_all_feeds_synced)
         self.fetch_worker.start()
