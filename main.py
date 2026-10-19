@@ -648,6 +648,8 @@ class MyRSSApp(QMainWindow):
         # Navigation Tree
         self.nav_tree = QTreeWidget()
         self.nav_tree.setHeaderHidden(True)
+        self.nav_tree.setRootIsDecorated(False)
+        self.nav_tree.setIndentation(0)
         self.nav_tree.setContextMenuPolicy(Qt.ContextMenuPolicy.CustomContextMenu)
         self.nav_tree.customContextMenuRequested.connect(self.show_sidebar_context_menu)
         self.nav_tree.itemClicked.connect(self.on_sidebar_item_clicked)

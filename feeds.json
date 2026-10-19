@@ -9,14 +9,14 @@
         "science"
       ],
       "favicon": "",
-      "last_fetched": "2026-10-19T03:38:57.164089+00:00",
+      "last_fetched": "2026-10-19T03:40:16.191663+00:00",
       "fetch_error": null,
       "articles": [
         {
           "id": "https://arstechnica.com/ai/2026/10/anthropic-gives-outside-ai-watchdog-employee-like-access/",
           "link": "https://arstechnica.com/ai/2026/10/anthropic-gives-outside-ai-watchdog-employee-like-access/",
           "published": "Sun, 18 Oct 2026 16:25:19 +0000",
-          "read": false,
+          "read": true,
           "starred": false,
           "summary": "The outside watchdog can publish its findings without Anthropic's approval.",
           "title": "Anthropic gives outside AI watchdog \u201cemployee-like\u201d access"
@@ -25,7 +25,7 @@
           "id": "https://arstechnica.com/science/2026/10/science-says-your-boss-should-talk-less-in-meetings/",
           "link": "https://arstechnica.com/science/2026/10/science-says-your-boss-should-talk-less-in-meetings/",
           "published": "Sat, 17 Oct 2026 11:15:11 +0000",
-          "read": false,
+          "read": true,
           "starred": false,
           "summary": "Research suggests listening more while talking less. Killing aimless meetings can help, too.",
           "title": "Science says your boss should talk less in meetings"
@@ -383,7 +383,7 @@
         "startups"
       ],
       "favicon": "iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAMAAABhEH5lAAAAPFBMVEX/ZgD/////+fX/vZL/7OD/bAv/9O3/jUL/v5X/p23/nFr/2L7/cBL/6dr/iDn/sHz/mFT/1Lf/3sn/oGHk31anAAAAQklEQVQYlWNgoDJgZWMBkuyMHEhinIxcDAzcTDzI6lh4GfgY+VG0CjAKCLKxohonxMIojGYDHyMvhq1MzNQTogIAANoJARPbxOAzAAAAAElFTkSuQmCC",
-      "last_fetched": "2026-10-19T03:39:02.010211+00:00",
+      "last_fetched": "2026-10-19T03:40:00.304630+00:00",
       "fetch_error": null,
       "articles": [
         {
@@ -934,7 +934,7 @@
       "category": "General",
       "tags": [],
       "favicon": "iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAbFBMVEWrICDBwcGVHBy2trampqaUlJSHh4fc3NxBQEDHx8dGRkdERERNTEwwMDAgICAkIyM9PD3g4OArKSkcGxxVVVQAAAAmJSZRUE81NDQsLCxBQUMyMTI6Nzc9PTzc1dXg2dm/mZkOEBDOzs4kGBgFm4nfAAAAs0lEQVQYlT3P0W7DMAhAUTqnNbZjIHZDcZNsa/f//zh7q3okeLgSD8B8Xfd4etG4wu1mmNwQk2szwjznI06D4NTwDhibyXnYj3OJApJK3i7DbhdFgT0RMRNrX9TEeoiIKIJHQjPbwJJ+vHEuYMifw9dAW4FNeFn84v1YlBsUIQ/d2mehflKMvsMDIPQQaiugRvCEP97XpqC5Pr3/Lz+VFbjUEMan4RRCVQbWh5ucG8m5yvUX5uwMuBMCWQ4AAAAASUVORK5CYII=",
-      "last_fetched": "2026-10-19T03:39:03.603430+00:00",
+      "last_fetched": "2026-10-19T03:40:05.222574+00:00",
       "fetch_error": null,
       "articles": [
         {
