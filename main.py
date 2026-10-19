@@ -530,7 +530,7 @@ class ArticleBodyParser(HTMLParser):
         chunks = []
         for selector in self.selectors:
             chunks.extend(self.selector_matches.get(selector, []))
-        return "<br><br>".join(chunks)
+        return "".join(chunks)
 
 
 class ArticlePageFetchWorker(QThread):
@@ -1167,7 +1167,13 @@ class MyRSSApp(QMainWindow):
                 }}
                 h1, h2, h3, h4 {{
                     color: {CP_YELLOW};
-                    margin-top: 15px;
+                    font-size: 12pt;
+                    line-height: 1.25;
+                    margin: 6px 0;
+                }}
+                p {{
+                    line-height: 1.45;
+                    margin: 4px 0 10px;
                 }}
                 code, pre {{
                     background-color: #050505;
