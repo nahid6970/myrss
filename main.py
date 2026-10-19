@@ -894,6 +894,7 @@ class MyRSSApp(QMainWindow):
         list_layout.addWidget(self.list_header)
 
         self.article_list_widget = QListWidget()
+        self.article_list_widget.setStyleSheet("QListWidget::item { padding: 1px 5px; }")
         self.article_list_widget.setWordWrap(True)
         self.article_list_widget.setHorizontalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOff)
         self.article_list_widget.setContextMenuPolicy(Qt.ContextMenuPolicy.CustomContextMenu)
