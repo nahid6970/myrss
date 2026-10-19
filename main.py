@@ -894,7 +894,7 @@ class MyRSSApp(QMainWindow):
         list_layout.addWidget(self.list_header)
 
         self.article_list_widget = QListWidget()
-        self.article_list_widget.setStyleSheet("QListWidget::item { padding: 1px 5px; }")
+        self.article_list_widget.setStyleSheet("QListWidget::item { padding: 0px 2px; margin: 0px; }")
         self.article_list_widget.setWordWrap(True)
         self.article_list_widget.setHorizontalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOff)
         self.article_list_widget.setContextMenuPolicy(Qt.ContextMenuPolicy.CustomContextMenu)
@@ -1070,13 +1070,10 @@ class MyRSSApp(QMainWindow):
         for art, feed in filtered:
             is_read = art.get("read", False)
             is_starred = art.get("starred", False)
-            star_symbol = "★" if is_starred else "☆"
-            read_marker = " " if is_read else "●"
-
             title = art.get("title", "Untitled")
             pub_str = parse_date(art.get("published", "")).strftime("%a, %d %b %Y %H:%M")
 
-            item_text = f"{star_symbol} {read_marker} {title}  {pub_str}"
+            item_text = f"{title}  {pub_str}"
             item = QListWidgetItem(item_text)
             item.setData(Qt.ItemDataRole.UserRole, (art, feed))
 
@@ -1122,6 +1119,7 @@ class MyRSSApp(QMainWindow):
         art, feed = self.current_article
         if content:
             art["full_content"] = content
+            self.save_feeds_data()
             self.display_article_content(art, feed)
         elif error:
             feed_title = feed.get("title") or feed.get("url")

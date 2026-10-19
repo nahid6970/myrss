@@ -8,4 +8,4 @@ env/
 venv/
 *.log
 .DS_Store
-*.json
+feeds.json
