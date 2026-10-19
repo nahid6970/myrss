@@ -1073,10 +1073,9 @@ class MyRSSApp(QMainWindow):
             read_marker = " " if is_read else "●"
 
             title = art.get("title", "Untitled")
-            pub_str = art.get("published", "")
-            feed_name = feed.get("title") or feed.get("url")
+            pub_str = parse_date(art.get("published", "")).strftime("%a, %d %b %Y %H:%M")
 
-            item_text = f"{star_symbol} {read_marker} {title}\n    [{feed_name}] {pub_str}"
+            item_text = f"{star_symbol} {read_marker} {title}  {pub_str}"
             item = QListWidgetItem(item_text)
             item.setData(Qt.ItemDataRole.UserRole, (art, feed))
 

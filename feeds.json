@@ -1,380 +1,6 @@
 {
   "feeds": [
     {
-      "url": "https://feeds.arstechnica.com/arstechnica/index",
-      "title": "Ars Technica",
-      "category": "Tech",
-      "tags": [
-        "tech",
-        "science"
-      ],
-      "favicon": "",
-      "last_fetched": "2026-10-19T04:09:33.106555+00:00",
-      "fetch_error": null,
-      "articles": [
-        {
-          "id": "https://arstechnica.com/ai/2026/10/anthropic-gives-outside-ai-watchdog-employee-like-access/",
-          "link": "https://arstechnica.com/ai/2026/10/anthropic-gives-outside-ai-watchdog-employee-like-access/",
-          "published": "Sun, 18 Oct 2026 16:25:19 +0000",
-          "read": true,
-          "starred": false,
-          "summary": "The outside watchdog can publish its findings without Anthropic's approval.",
-          "title": "Anthropic gives outside AI watchdog \u201cemployee-like\u201d access"
-        },
-        {
-          "id": "https://arstechnica.com/science/2026/10/science-says-your-boss-should-talk-less-in-meetings/",
-          "link": "https://arstechnica.com/science/2026/10/science-says-your-boss-should-talk-less-in-meetings/",
-          "published": "Sat, 17 Oct 2026 11:15:11 +0000",
-          "read": true,
-          "starred": false,
-          "summary": "Research suggests listening more while talking less. Killing aimless meetings can help, too.",
-          "title": "Science says your boss should talk less in meetings"
-        },
-        {
-          "id": "https://arstechnica.com/gaming/2026/10/why-biowares-neverwinter-nights-still-has-thousands-of-active-players/",
-          "link": "https://arstechnica.com/gaming/2026/10/why-biowares-neverwinter-nights-still-has-thousands-of-active-players/",
-          "published": "Sat, 17 Oct 2026 11:00:21 +0000",
-          "read": true,
-          "starred": false,
-          "summary": "The single-player is just OK, but according to the players, that doesn't matter.",
-          "title": "Why BioWare's Neverwinter Nights still has thousands of active players"
-        },
-        {
-          "id": "https://arstechnica.com/security/2026/10/openai-models-hacked-a-crypto-wallet-and-breached-more-websites/",
-          "link": "https://arstechnica.com/security/2026/10/openai-models-hacked-a-crypto-wallet-and-breached-more-websites/",
-          "published": "Fri, 16 Oct 2026 20:59:01 +0000",
-          "read": false,
-          "starred": false,
-          "summary": "The actions could have resulted in criminal charges had humans been behind the keyboard.",
-          "title": "OpenAI models hacked a crypto wallet and breached more websites"
-        },
-        {
-          "id": "https://arstechnica.com/tech-policy/2026/10/thegentlemanpervert-producing-ai-csam-is-a-nj-prosecutor-say-cops/",
-          "link": "https://arstechnica.com/tech-policy/2026/10/thegentlemanpervert-producing-ai-csam-is-a-nj-prosecutor-say-cops/",
-          "published": "Fri, 16 Oct 2026 20:20:07 +0000",
-          "read": false,
-          "starred": false,
-          "summary": "Discord user flagged AI CSAM, triggering arrest of New Jersey deputy AG.",
-          "title": "\u201cthegentlemanpervert\u201d producing AI CSAM is a NJ prosecutor, say cops"
-        },
-        {
-          "id": "https://arstechnica.com/gaming/2026/10/us-rep-proposes-bill-to-give-video-game-buyers-ownership-not-a-license/",
-          "link": "https://arstechnica.com/gaming/2026/10/us-rep-proposes-bill-to-give-video-game-buyers-ownership-not-a-license/",
-          "published": "Fri, 16 Oct 2026 19:41:18 +0000",
-          "read": false,
-          "starred": false,
-          "summary": "There are still significant hurdles ahead, both technical and legislative.",
-          "title": "US Rep proposes bill to give video game buyers \"ownership,\" not \"a license\""
-        },
-        {
-          "id": "https://arstechnica.com/gadgets/2026/10/ray-ban-meta-smart-glasses-found-recording-audio-without-wearers-consent/",
-          "link": "https://arstechnica.com/gadgets/2026/10/ray-ban-meta-smart-glasses-found-recording-audio-without-wearers-consent/",
-          "published": "Fri, 16 Oct 2026 19:11:50 +0000",
-          "read": false,
-          "starred": false,
-          "summary": "The bug is fixed, but privacy concerns remain.",
-          "title": "Bug turns one of the biggest fears about Ray-Ban Meta smart glasses into reality"
-        },
-        {
-          "id": "https://arstechnica.com/health/2026/10/rfk-jr-proposes-fda-look-the-other-way-on-unproven-peptides-report-says/",
-          "link": "https://arstechnica.com/health/2026/10/rfk-jr-proposes-fda-look-the-other-way-on-unproven-peptides-report-says/",
-          "published": "Fri, 16 Oct 2026 17:05:59 +0000",
-          "read": false,
-          "starred": false,
-          "summary": "FDA scientists said none of the popular drugs have been proven safe or effective.",
-          "title": "RFK Jr. proposes FDA look the other way on unproven peptides, report says"
-        },
-        {
-          "id": "https://arstechnica.com/tech-policy/2026/10/meta-may-use-sweeping-new-commercial-tos-to-avoid-millions-in-ai-licensing-fees/",
-          "link": "https://arstechnica.com/tech-policy/2026/10/meta-may-use-sweeping-new-commercial-tos-to-avoid-millions-in-ai-licensing-fees/",
-          "published": "Fri, 16 Oct 2026 15:41:00 +0000",
-          "read": false,
-          "starred": false,
-          "summary": "Meta \u201cstreamlined\u201d its commercial TOS. Legal experts warn it\u2019s an AI power grab.",
-          "title": "Meta may use sweeping new commercial TOS to avoid millions in AI licensing fees"
-        },
-        {
-          "id": "https://arstechnica.com/tech-policy/2026/10/polymarket-saw-600-million-in-election-trades-after-the-elections-were-over/",
-          "link": "https://arstechnica.com/tech-policy/2026/10/polymarket-saw-600-million-in-election-trades-after-the-elections-were-over/",
-          "published": "Fri, 16 Oct 2026 14:19:22 +0000",
-          "read": false,
-          "starred": false,
-          "summary": "Millions kept changing hands long after the election outcomes were effectively settled.",
-          "title": "Polymarket saw $600 million in election trades after the elections were over"
-        },
-        {
-          "id": "https://arstechnica.com/cars/2026/10/tesla-turns-to-50-year-old-stunt-technology-as-it-tries-to-roadster-again/",
-          "link": "https://arstechnica.com/cars/2026/10/tesla-turns-to-50-year-old-stunt-technology-as-it-tries-to-roadster-again/",
-          "published": "Fri, 16 Oct 2026 14:03:25 +0000",
-          "read": false,
-          "starred": false,
-          "summary": "If you want to make a car spin in the air, compressed gas is a good way to do it.",
-          "title": "Tesla turns to 50-year-old stunt technology as it tries to Roadster again"
-        },
-        {
-          "id": "https://arstechnica.com/tech-policy/2026/10/romance-scam-doc-super-scam-me-takes-viewers-deep-into-love-bombing-terrain/",
-          "link": "https://arstechnica.com/tech-policy/2026/10/romance-scam-doc-super-scam-me-takes-viewers-deep-into-love-bombing-terrain/",
-          "published": "Fri, 16 Oct 2026 14:00:59 +0000",
-          "read": false,
-          "starred": false,
-          "summary": "Watch an exclusive clip from <em>Super Scam Me</em> where a victim tracks down her scammer.",
-          "title": "Super Scam Me documentary shows what it takes to catch a romance scammer"
-        },
-        {
-          "id": "https://arstechnica.com/reviews/2026/10/the-surface-laptop-ultra-delivers-on-most-of-microsofts-promises/",
-          "link": "https://arstechnica.com/reviews/2026/10/the-surface-laptop-ultra-delivers-on-most-of-microsofts-promises/",
-          "published": "Fri, 16 Oct 2026 12:00:05 +0000",
-          "read": false,
-          "starred": false,
-          "summary": "Microsoft promises one machine for dev, AI, and gaming, and mostly gets there.",
-          "title": "The Surface Laptop Ultra delivers on most of Microsoft's promises"
-        },
-        {
-          "id": "https://arstechnica.com/space/2026/10/rocket-report-faa-eyes-more-starbase-traffic-indias-skyroot-snares-us-customer/",
-          "link": "https://arstechnica.com/space/2026/10/rocket-report-faa-eyes-more-starbase-traffic-indias-skyroot-snares-us-customer/",
-          "published": "Fri, 16 Oct 2026 11:00:53 +0000",
-          "read": false,
-          "starred": false,
-          "summary": "The pioneering reusable upper stage for Stoke Space's Nova rocket ships out for testing.",
-          "title": "Rocket Report: FAA eyes more Starbase traffic; India's Skyroot snares US customer"
-        },
-        {
-          "id": "https://arstechnica.com/space/2026/10/blue-origin-is-going-all-in-on-the-new-glenn-rocket/",
-          "link": "https://arstechnica.com/space/2026/10/blue-origin-is-going-all-in-on-the-new-glenn-rocket/",
-          "published": "Fri, 16 Oct 2026 10:00:54 +0000",
-          "read": false,
-          "starred": false,
-          "summary": "The infrastructure is designed to support multiple flights per week by the end of the decade.",
-          "title": "Blue Origin is going all in on the New Glenn rocket"
-        },
-        {
-          "id": "https://arstechnica.com/reviews/2026/10/googlebook-review-android-on-a-laptop-is-still-android/",
-          "link": "https://arstechnica.com/reviews/2026/10/googlebook-review-android-on-a-laptop-is-still-android/",
-          "published": "Fri, 16 Oct 2026 10:00:32 +0000",
-          "read": false,
-          "starred": false,
-          "summary": "Android laptops are here, but Google has a lot of work ahead to make them good.",
-          "title": "Googlebook review: Android on a laptop is still Android"
-        },
-        {
-          "id": "https://arstechnica.com/gadgets/2026/10/kde-turns-30-with-plasma-6-8-remote-upgrades-and-an-x11-farewell/",
-          "link": "https://arstechnica.com/gadgets/2026/10/kde-turns-30-with-plasma-6-8-remote-upgrades-and-an-x11-farewell/",
-          "published": "Thu, 15 Oct 2026 22:21:06 +0000",
-          "read": false,
-          "starred": false,
-          "summary": "KDE celebrates 30 years with a new Plasma release, a farewell to X11, and a movie.",
-          "title": "KDE turns 30 with Plasma 6.8, remote upgrades, and an X11 farewell"
-        },
-        {
-          "id": "https://arstechnica.com/gadgets/2026/10/plex-now-helps-sell-movie-theater-tickets/",
-          "link": "https://arstechnica.com/gadgets/2026/10/plex-now-helps-sell-movie-theater-tickets/",
-          "published": "Thu, 15 Oct 2026 21:22:15 +0000",
-          "read": false,
-          "starred": false,
-          "summary": "Discovery data from Plex users will help studios, advertisers.",
-          "title": "Plex now helps sell movie theater tickets"
-        },
-        {
-          "id": "https://arstechnica.com/health/2026/10/hegseths-dubious-low-t-screening-may-flag-up-to-25-percent-of-the-army/",
-          "link": "https://arstechnica.com/health/2026/10/hegseths-dubious-low-t-screening-may-flag-up-to-25-percent-of-the-army/",
-          "published": "Thu, 15 Oct 2026 21:09:57 +0000",
-          "read": false,
-          "starred": false,
-          "summary": "Medical experts explicitly recommend against blanket screenings.",
-          "title": "Hegseth\u2019s dubious low-T screening may flag up to 25 percent of the Army"
-        },
-        {
-          "id": "https://arstechnica.com/security/2026/10/targeted-ads-delivered-0-click-exploits-to-install-mercenary-malware/",
-          "link": "https://arstechnica.com/security/2026/10/targeted-ads-delivered-0-click-exploits-to-install-mercenary-malware/",
-          "published": "Thu, 15 Oct 2026 20:32:41 +0000",
-          "read": false,
-          "starred": false,
-          "summary": "The incident is likely 1st confirmation of mercenary spyware delivered by targeted ads.",
-          "title": "Targeted ads delivered 0-click exploits to install mercenary malware"
-        },
-        {
-          "id": "https://arstechnica.com/security/2026/10/fridge-hack-costing-millions-and-sparking-fires-stemmed-from-poor-security/",
-          "link": "https://arstechnica.com/security/2026/10/fridge-hack-costing-millions-and-sparking-fires-stemmed-from-poor-security/",
-          "published": "Wed, 14 Oct 2026 21:35:09 +0000",
-          "read": true,
-          "starred": false,
-          "summary": "Incident hitting 700 supermarkets exploited outdated devices exposed to the Internet.",
-          "title": "Fridge hack costing millions and sparking fires stemmed from poor security"
-        },
-        {
-          "id": "https://arstechnica.com/gaming/2026/10/programming-is-hard-epic-games-leans-on-vibe-coding-for-its-new-launcher-app/",
-          "link": "https://arstechnica.com/gaming/2026/10/programming-is-hard-epic-games-leans-on-vibe-coding-for-its-new-launcher-app/",
-          "published": "Wed, 14 Oct 2026 21:15:56 +0000",
-          "read": true,
-          "starred": false,
-          "summary": "But the new \"Preview\" app \"will have some bugs,\" Epic warns.",
-          "title": "Epic says its new vibe-coded Epic Games Launcher is faster than Steam"
-        },
-        {
-          "id": "https://arstechnica.com/gadgets/2026/10/nato-may-redeploy-anti-drone-defenses-as-attacks-sink-more-black-sea-shipping/",
-          "link": "https://arstechnica.com/gadgets/2026/10/nato-may-redeploy-anti-drone-defenses-as-attacks-sink-more-black-sea-shipping/",
-          "published": "Wed, 14 Oct 2026 21:03:11 +0000",
-          "read": true,
-          "starred": false,
-          "summary": "Suspected Russian drones have sunk or damaged 5 ships near Bulgaria and Romania.",
-          "title": "NATO may redeploy anti-drone defenses as attacks sink more Black Sea shipping"
-        },
-        {
-          "id": "https://arstechnica.com/space/2026/10/nasas-embattled-venus-missions-are-back-on-track-after-cancellation-threat/",
-          "link": "https://arstechnica.com/space/2026/10/nasas-embattled-venus-missions-are-back-on-track-after-cancellation-threat/",
-          "published": "Wed, 14 Oct 2026 20:48:07 +0000",
-          "read": true,
-          "starred": false,
-          "summary": "\"This is great news for us. We're staffing up. We're accelerating.\"",
-          "title": "Things are finally looking up for NASA's first missions to Venus in a generation"
-        },
-        {
-          "id": "https://arstechnica.com/tech-policy/2026/10/schools-libraries-plead-with-fcc-to-scrap-idea-of-killing-2b-broadband-program/",
-          "link": "https://arstechnica.com/tech-policy/2026/10/schools-libraries-plead-with-fcc-to-scrap-idea-of-killing-2b-broadband-program/",
-          "published": "Wed, 14 Oct 2026 20:15:56 +0000",
-          "read": true,
-          "starred": false,
-          "summary": "FCC chair threatens E-Rate fund, blames schools for kids' excessive screen time.",
-          "title": "Schools across US protest FCC plan that could disconnect kids from Internet"
-        },
-        {
-          "id": "https://arstechnica.com/tech-policy/2026/10/georgia-man-sues-flock-sheriffs-office-over-alleged-alpr-fueled-retaliation/",
-          "link": "https://arstechnica.com/tech-policy/2026/10/georgia-man-sues-flock-sheriffs-office-over-alleged-alpr-fueled-retaliation/",
-          "published": "Wed, 14 Oct 2026 19:53:01 +0000",
-          "read": true,
-          "starred": false,
-          "summary": "Plaintiff claims cameras enabled warrantless tracking and monitoring after he previously sued over excessive force.",
-          "title": "Georgia man sues Flock, sheriff's office over alleged ALPR-fueled retaliation"
-        },
-        {
-          "id": "https://arstechnica.com/cars/2026/10/software-development-and-rules-stability-prototype-racing-in-2030/",
-          "link": "https://arstechnica.com/cars/2026/10/software-development-and-rules-stability-prototype-racing-in-2030/",
-          "published": "Wed, 14 Oct 2026 19:44:26 +0000",
-          "read": true,
-          "starred": false,
-          "summary": "With the end of IMSA\u2019s 2026 season, we have thoughts about the future of the sport.",
-          "title": "Software development and rules stability: Prototype racing in 2030"
-        },
-        {
-          "id": "https://arstechnica.com/culture/2026/10/greta-gerwig-channels-bowie-in-psychedelic-the-magicians-nephew-trailer/",
-          "link": "https://arstechnica.com/culture/2026/10/greta-gerwig-channels-bowie-in-psychedelic-the-magicians-nephew-trailer/",
-          "published": "Wed, 14 Oct 2026 19:10:58 +0000",
-          "read": false,
-          "starred": false,
-          "summary": "\"Have you ever seen a world born?\"",
-          "title": "Greta Gerwig channels Bowie in psychedelic The Magician's Nephew trailer"
-        },
-        {
-          "id": "https://arstechnica.com/science/2026/10/researchers-use-ai-to-design-proteins-that-cut-up-other-proteins/",
-          "link": "https://arstechnica.com/science/2026/10/researchers-use-ai-to-design-proteins-that-cut-up-other-proteins/",
-          "published": "Wed, 14 Oct 2026 17:10:15 +0000",
-          "read": false,
-          "starred": false,
-          "summary": "AI design tools make proteins that break bonds that are stable for hundreds of years.",
-          "title": "Researchers use AI to design proteins that cut up other proteins"
-        },
-        {
-          "id": "https://arstechnica.com/tech-policy/2026/10/fbi-arrests-openai-engineer-suspected-of-planting-bug-in-conference-room/",
-          "link": "https://arstechnica.com/tech-policy/2026/10/fbi-arrests-openai-engineer-suspected-of-planting-bug-in-conference-room/",
-          "published": "Wed, 14 Oct 2026 16:41:49 +0000",
-          "read": false,
-          "starred": false,
-          "summary": "OpenAI engineer faces 5 years and $250K fine as FBI lobs foreign spy charges.",
-          "title": "Recording device hidden in toilet paper found in top-secret OpenAI meeting room"
-        },
-        {
-          "id": "https://arstechnica.com/gaming/2026/10/legendary-fps-level-designer-richard-levelord-gray-passes-away-at-68/",
-          "link": "https://arstechnica.com/gaming/2026/10/legendary-fps-level-designer-richard-levelord-gray-passes-away-at-68/",
-          "published": "Wed, 14 Oct 2026 16:02:08 +0000",
-          "read": false,
-          "starred": false,
-          "summary": "Tributes pour in for the man behind iconic <em>Duke Nukem 3D</em> levels and much more.",
-          "title": "Legendary FPS level designer Richard \"Levelord\" Gray dies at 68"
-        },
-        {
-          "id": "https://arstechnica.com/gadgets/2026/10/ukraine-blindsided-by-starlink-throttling-restrictions-and-intelligence-gaps/",
-          "link": "https://arstechnica.com/gadgets/2026/10/ukraine-blindsided-by-starlink-throttling-restrictions-and-intelligence-gaps/",
-          "published": "Wed, 14 Oct 2026 13:56:11 +0000",
-          "read": false,
-          "starred": false,
-          "summary": "Kyiv\u2019s forces experience connectivity problems on Elon Musk\u2019s satellite network.",
-          "title": "Ukraine blindsided by Starlink throttling restrictions and intelligence gaps"
-        },
-        {
-          "id": "https://arstechnica.com/security/2026/10/anthropic-warns-small-ai-models-could-self-replicate-through-iot-devices/",
-          "link": "https://arstechnica.com/security/2026/10/anthropic-warns-small-ai-models-could-self-replicate-through-iot-devices/",
-          "published": "Wed, 14 Oct 2026 12:55:06 +0000",
-          "read": false,
-          "starred": false,
-          "summary": "\"Small weight-based replicators\" could usher in a new generation of computer worms.",
-          "title": "Anthropic warns small AI models could self-replicate through IoT devices"
-        },
-        {
-          "id": "https://arstechnica.com/gadgets/2026/10/the-internets-undersea-backbone-is-slipping-into-to-the-danger-zone/",
-          "link": "https://arstechnica.com/gadgets/2026/10/the-internets-undersea-backbone-is-slipping-into-to-the-danger-zone/",
-          "published": "Wed, 14 Oct 2026 11:15:24 +0000",
-          "read": false,
-          "starred": false,
-          "summary": "Elisabeth Braw\u2019s book <em>Undersea War</em> on rising risks for undersea infrastructure.",
-          "title": "The Internet\u2019s undersea backbone is slipping into the danger zone"
-        },
-        {
-          "id": "https://arstechnica.com/tech-policy/2026/10/openai-google-pushing-new-ai-models-easily-tricked-into-making-nudes-researchers-say/",
-          "link": "https://arstechnica.com/tech-policy/2026/10/openai-google-pushing-new-ai-models-easily-tricked-into-making-nudes-researchers-say/",
-          "published": "Wed, 14 Oct 2026 11:00:30 +0000",
-          "read": false,
-          "starred": false,
-          "summary": "Attack method exposes flaws in OpenAI, Google safeguards against AI nudes.",
-          "title": "OpenAI, Google pushing new AI models easily tricked into making nudes, researchers say"
-        },
-        {
-          "id": "https://arstechnica.com/health/2026/10/martin-shkreli-livestreamed-himself-violating-lifetime-pharma-ban-ftc-says/",
-          "link": "https://arstechnica.com/health/2026/10/martin-shkreli-livestreamed-himself-violating-lifetime-pharma-ban-ftc-says/",
-          "published": "Tue, 13 Oct 2026 22:48:12 +0000",
-          "read": true,
-          "starred": false,
-          "summary": "\"I can always find a couple of biotech stocks to smoke,\" Shkreli said in a livestream.",
-          "title": "Martin Shkreli livestreamed himself violating lifetime pharma ban, FTC says"
-        },
-        {
-          "id": "https://arstechnica.com/gaming/2026/10/esa-targets-anbernic-emulation-handhelds-as-superfake-piracy-enablers/",
-          "link": "https://arstechnica.com/gaming/2026/10/esa-targets-anbernic-emulation-handhelds-as-superfake-piracy-enablers/",
-          "published": "Tue, 13 Oct 2026 21:55:49 +0000",
-          "read": true,
-          "starred": false,
-          "summary": "But third-party sellers, not Anbernic, are the ones routinely selling ROM-filled SD cards.",
-          "title": "ESA targets Anbernic emulation handhelds as \"superfake\" piracy enablers"
-        },
-        {
-          "id": "https://arstechnica.com/information-technology/2026/10/topgolf-saved-over-11-3-million-after-leaving-vmware/",
-          "link": "https://arstechnica.com/information-technology/2026/10/topgolf-saved-over-11-3-million-after-leaving-vmware/",
-          "published": "Tue, 13 Oct 2026 21:33:43 +0000",
-          "read": false,
-          "starred": false,
-          "summary": "Topgolf and VMware \"ran deep\" before the migration.",
-          "title": "Topgolf saved over $11.3 million after leaving VMware"
-        },
-        {
-          "id": "https://arstechnica.com/tech-policy/2026/10/trumps-taxpayer-funded-ads-kept-airing-on-tv-the-day-after-judge-blocked-them/",
-          "link": "https://arstechnica.com/tech-policy/2026/10/trumps-taxpayer-funded-ads-kept-airing-on-tv-the-day-after-judge-blocked-them/",
-          "published": "Tue, 13 Oct 2026 19:50:37 +0000",
-          "read": false,
-          "starred": false,
-          "summary": "US attorney apologized to court, said government has stopped running Trump ads.",
-          "title": "Trump commercial railing against his enemies kept airing after court blocked it"
-        },
-        {
-          "id": "https://arstechnica.com/tech-policy/2026/10/disney-offers-20m-for-character-ais-scandal-plagued-chatbot-tech/",
-          "link": "https://arstechnica.com/tech-policy/2026/10/disney-offers-20m-for-character-ais-scandal-plagued-chatbot-tech/",
-          "published": "Tue, 13 Oct 2026 18:23:33 +0000",
-          "read": false,
-          "starred": false,
-          "summary": "Disney may acquire tech from one of the first chatbot makers linked to child suicide.",
-          "title": "Disney offers $20M for Character.AI\u2019s scandal-plagued chatbot tech"
-        }
-      ]
-    },
-    {
       "url": "https://news.ycombinator.com/rss",
       "title": "Hacker News",
       "category": "Tech",
@@ -383,9 +9,18 @@
         "startups"
       ],
       "favicon": "iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAMAAABhEH5lAAAAPFBMVEX/ZgD/////+fX/vZL/7OD/bAv/9O3/jUL/v5X/p23/nFr/2L7/cBL/6dr/iDn/sHz/mFT/1Lf/3sn/oGHk31anAAAAQklEQVQYlWNgoDJgZWMBkuyMHEhinIxcDAzcTDzI6lh4GfgY+VG0CjAKCLKxohonxMIojGYDHyMvhq1MzNQTogIAANoJARPbxOAzAAAAAElFTkSuQmCC",
-      "last_fetched": "2026-10-19T04:09:35.380361+00:00",
+      "last_fetched": "2026-10-19T04:13:51.573376+00:00",
       "fetch_error": null,
       "articles": [
+        {
+          "id": "https://thunk.blog/posts/types-of-types-haskell-kind-system/",
+          "link": "https://thunk.blog/posts/types-of-types-haskell-kind-system/",
+          "published": "Wed, 14 Oct 2026 17:00:31 +0000",
+          "read": false,
+          "starred": false,
+          "summary": "<a href=\"https://news.ycombinator.com/item?id=50090927\">Comments</a>",
+          "title": "Types of types: Haskell's Kind system"
+        },
         {
           "id": "https://arxiv.org/abs/2610.18861",
           "link": "https://arxiv.org/abs/2610.18861",
@@ -399,7 +34,7 @@
           "id": "https://colo.to/cyberspace.html",
           "link": "https://colo.to/cyberspace.html",
           "published": "Sun, 18 Oct 2026 23:37:57 +0000",
-          "read": false,
+          "read": true,
           "starred": false,
           "summary": "<a href=\"https://news.ycombinator.com/item?id=50146625\">Comments</a>",
           "title": "William Gibson and the trademarking of cyberspace"
@@ -481,10 +116,11 @@
           "id": "https://www.csis.org/analysis/how-quickly-can-dod-rebuild-and-recast-munitions-industrial-base",
           "link": "https://www.csis.org/analysis/how-quickly-can-dod-rebuild-and-recast-munitions-industrial-base",
           "published": "Sun, 18 Oct 2026 23:37:54 +0000",
-          "read": false,
+          "read": true,
           "starred": false,
           "summary": "<a href=\"https://news.ycombinator.com/item?id=50146624\">Comments</a>",
-          "title": "How Quickly Can the DoD Rebuild and Recast the Munitions Industrial Base?"
+          "title": "How Quickly Can the DoD Rebuild and Recast the Munitions Industrial Base?",
+          "full_content": "<article>\n\n    \n<a href=\"/index.php/events/capturing-national-security-benefits-offshore-wind\"></a>\n\n    <h3><a href=\"/index.php/events/capturing-national-security-benefits-offshore-wind\">\n    <span>Capturing National Security Benefits from Offshore Wind</span>\n</a>\n  </h3>\n\n        <div>\n      \n          \n                      \n    \nOctober 20, 2026 \u2022 9:30 \u2013 10:30 am EDT\n\n\n\n    </div>\n    \n            <span>\n      \n\n<div>\n\n                      <span>\n                                \n\n<div>\n</div>\n\n                  </span>\n            \n      \n                                                                                                                                                                            \n<div><span>\n    \n<svg>\n  <g>\n    <path></path>\n    <path></path>\n  </g>\n</svg>\n\n  </span><span>In Person</span></div>\n                        \n<div><span>\n    \n<svg>\n  <path></path>\n  <path></path>\n  <path></path>\n  <path></path>\n  <path></path>\n</svg>\n\n  </span><span>Webcast</span></div>\n                                </div>\n    </span>\n  \n        <div>\n      Hosted by  <span><a href=\"/index.php/programs/energy-security-and-climate-change-program\">Energy Security and Climate Change Program</a></span>\n    </div>\n  </article>"
         },
         {
           "id": "https://github.com/finereli/whatsapp-mcp",
@@ -544,7 +180,7 @@
           "id": "https://www.404media.co/watch-footage-of-the-flock-search-a-judge-ruled-unconstitutional/",
           "link": "https://www.404media.co/watch-footage-of-the-flock-search-a-judge-ruled-unconstitutional/",
           "published": "Mon, 19 Oct 2026 01:55:03 +0000",
-          "read": false,
+          "read": true,
           "starred": false,
           "summary": "<a href=\"https://news.ycombinator.com/item?id=50147455\">Comments</a>",
           "title": "Footage of the Flock search that a judge ruled was uncosntitutional"
@@ -935,7 +571,7 @@
       "category": "General",
       "tags": [],
       "favicon": "iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAbFBMVEWrICDBwcGVHBy2trampqaUlJSHh4fc3NxBQEDHx8dGRkdERERNTEwwMDAgICAkIyM9PD3g4OArKSkcGxxVVVQAAAAmJSZRUE81NDQsLCxBQUMyMTI6Nzc9PTzc1dXg2dm/mZkOEBDOzs4kGBgFm4nfAAAAs0lEQVQYlT3P0W7DMAhAUTqnNbZjIHZDcZNsa/f//zh7q3okeLgSD8B8Xfd4etG4wu1mmNwQk2szwjznI06D4NTwDhibyXnYj3OJApJK3i7DbhdFgT0RMRNrX9TEeoiIKIJHQjPbwJJ+vHEuYMifw9dAW4FNeFn84v1YlBsUIQ/d2mehflKMvsMDIPQQaiugRvCEP97XpqC5Pr3/Lz+VFbjUEMan4RRCVQbWh5ucG8m5yvUX5uwMuBMCWQ4AAAAASUVORK5CYII=",
-      "last_fetched": "2026-10-19T04:09:38.439261+00:00",
+      "last_fetched": "2026-10-19T04:13:53.177958+00:00",
       "fetch_error": null,
       "articles": [
         {
