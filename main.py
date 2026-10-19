@@ -4,6 +4,8 @@ import json
 import base64
 import urllib.request
 import urllib.parse
+from html import escape
+from html.parser import HTMLParser
 from datetime import datetime, timezone, timedelta
 import email.utils
 
@@ -329,6 +331,8 @@ class FeedFetchWorker(QThread):
                             title = entry.get("title", "Untitled")
                             link = entry.get("link", "")
                             summary = entry.get("summary", entry.get("description", ""))
+                            content_parts = entry.get("content", [])
+                            content = content_parts[0].get("value", "") if content_parts else ""
                             pub = entry.get("published", entry.get("updated", datetime.now(timezone.utc).isoformat()))
                             fetched_articles.append({
                                 "id": guid,
@@ -337,7 +341,8 @@ class FeedFetchWorker(QThread):
                                 "published": pub,
                                 "read": False,
                                 "starred": False,
-                                "summary": summary
+                                "summary": summary,
+                                "content": content or summary
                             })
                 else:
                     parsed_title, fetched_articles = fallback_parse_feed(url)
@@ -353,6 +358,98 @@ class FeedFetchWorker(QThread):
             self.finished_feed.emit(feed, new_articles, error_msg or "", feed_title, favicon)
 
         self.all_done.emit(total_new_items)
+
+
+class ArticleBodyParser(HTMLParser):
+    """Extract the main article markup from a regular HTML page."""
+    VOID_TAGS = {"area", "base", "br", "col", "embed", "hr", "img", "input", "link", "meta", "param", "source", "track", "wbr"}
+    SKIP_TAGS = {"script", "style", "nav", "footer", "header", "aside", "form", "noscript", "iframe"}
+    ARTICLE_CLASSES = {"entry-content", "post-content", "article-content", "article-body", "post-body", "jeg_post_content", "post_content"}
+
+    def __init__(self):
+        super().__init__(convert_charrefs=True)
+        self.started = False
+        self.depth = 0
+        self.skip_depth = 0
+        self.parts = []
+
+    def handle_starttag(self, tag, attrs):
+        attrs = dict(attrs)
+        classes = set((attrs.get("class") or "").split())
+        if not self.started and (tag == "article" or classes & self.ARTICLE_CLASSES):
+            self.started = True
+            self.depth = 1
+            self._append_tag(tag, attrs)
+            return
+        if not self.started or self.depth <= 0:
+            return
+        if tag in self.SKIP_TAGS:
+            self.skip_depth += 1
+        if self.skip_depth == 0:
+            self._append_tag(tag, attrs)
+        if tag not in self.VOID_TAGS:
+            self.depth += 1
+
+    def handle_endtag(self, tag):
+        if not self.started or self.depth <= 0:
+            return
+        if tag in self.VOID_TAGS:
+            return
+        if tag in self.SKIP_TAGS and self.skip_depth:
+            self.skip_depth -= 1
+        if self.skip_depth == 0:
+            self.parts.append(f"</{tag}>")
+        self.depth -= 1
+
+    def handle_startendtag(self, tag, attrs):
+        attrs = dict(attrs)
+        if self.started and self.depth > 0:
+            if self.skip_depth == 0:
+                self._append_tag(tag, attrs)
+                if tag not in self.VOID_TAGS:
+                    self.parts.append(f"</{tag}>")
+            return
+        self.handle_starttag(tag, attrs)
+
+    def handle_data(self, data):
+        if self.started and self.depth > 0 and self.skip_depth == 0:
+            self.parts.append(escape(data))
+
+    def handle_entityref(self, name):
+        if self.started and self.depth > 0 and self.skip_depth == 0:
+            self.parts.append(f"&{name};")
+
+    def handle_charref(self, name):
+        if self.started and self.depth > 0 and self.skip_depth == 0:
+            self.parts.append(f"&#{name};")
+
+    def _append_tag(self, tag, attrs):
+        safe_attrs = []
+        for name in ("href", "src", "alt", "title"):
+            value = attrs.get(name)
+            if value:
+                safe_attrs.append(f'{name}="{escape(value, quote=True)}"')
+        suffix = f" {' '.join(safe_attrs)}" if safe_attrs else ""
+        self.parts.append(f"<{tag}{suffix}>")
+
+
+class ArticlePageFetchWorker(QThread):
+    fetched = pyqtSignal(str, str, str)
+
+    def __init__(self, url):
+        super().__init__()
+        self.url = url
+
+    def run(self):
+        try:
+            request = urllib.request.Request(self.url, headers={"User-Agent": "myRSS/1.0 (article reader)"})
+            with urllib.request.urlopen(request, timeout=12) as response:
+                page = response.read(4_000_000).decode(response.headers.get_content_charset() or "utf-8", errors="replace")
+            parser = ArticleBodyParser()
+            parser.feed(page)
+            self.fetched.emit(self.url, "".join(parser.parts).strip(), "")
+        except Exception as exc:
+            self.fetched.emit(self.url, "", str(exc))
 
 # ---------------------------------------------------------
 # DIALOGS
@@ -468,6 +565,7 @@ class MyRSSApp(QMainWindow):
         self.current_article = None
         self.displayed_articles = []
         self.fetch_worker = None
+        self.article_page_workers = []
 
         self.init_settings()
         self.load_feeds_data()
@@ -760,6 +858,9 @@ class MyRSSApp(QMainWindow):
         self.selected_filter_type = filter_type
         self.selected_filter_data = filter_payload
         self.refresh_article_list()
+        if filter_type == "FEED" and self.article_list_widget.count():
+            self.article_list_widget.setCurrentRow(0)
+            self.on_article_selected(self.article_list_widget.item(0))
 
     def set_state_filter(self, mode):
         self.current_filter_mode = mode
@@ -873,6 +974,25 @@ class MyRSSApp(QMainWindow):
             item.setText(item.text().replace("●", " "))
 
         self.display_article_content(art, feed)
+        if art.get("link") and not art.get("full_content"):
+            self.reader_meta.setText(self.reader_meta.text() + " // LOADING FULL ARTICLE…")
+            worker = ArticlePageFetchWorker(art["link"])
+            self.article_page_workers.append(worker)
+            worker.fetched.connect(self.on_article_page_fetched)
+            worker.finished.connect(lambda current=worker: self.article_page_workers.remove(current) if current in self.article_page_workers else None)
+            worker.start()
+
+    def on_article_page_fetched(self, url, content, error):
+        if not self.current_article or self.current_article[0].get("link") != url:
+            return
+        art, feed = self.current_article
+        if content:
+            art["full_content"] = content
+            self.display_article_content(art, feed)
+        elif error:
+            feed_title = feed.get("title") or feed.get("url")
+            pub = art.get("published", "Unknown Date")
+            self.reader_meta.setText(f"SOURCE: {feed_title} // PUBLISHED: {pub} // FULL PAGE UNAVAILABLE; SHOWING FEED EXCERPT")
 
     def display_article_content(self, art, feed):
         self.reader_title.setText(art.get("title", "Untitled"))
@@ -884,7 +1004,7 @@ class MyRSSApp(QMainWindow):
         self.btn_toggle_read.setText("MARK UNREAD" if art.get("read") else "MARK READ")
 
         # Cyberpunk Styled HTML Reader View
-        body_content = art.get("summary", "No transmission content available.")
+        body_content = art.get("full_content") or art.get("content") or art.get("summary") or "No article content was included in this feed. Use OPEN IN BROWSER to read the full page."
         html = f"""
         <html>
         <head>
@@ -934,6 +1054,7 @@ class MyRSSApp(QMainWindow):
         </body>
         </html>
         """
+        self.article_browser.document().setBaseUrl(QUrl(art.get("link", "")))
         self.article_browser.setHtml(html)
 
     # --- ACTIONS & CONTEXT MENUS ---

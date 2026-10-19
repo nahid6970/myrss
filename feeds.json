@@ -9,7 +9,7 @@
         "science"
       ],
       "favicon": "",
-      "last_fetched": "2026-10-19T03:40:16.191663+00:00",
+      "last_fetched": "2026-10-19T03:48:36.079878+00:00",
       "fetch_error": null,
       "articles": [
         {
@@ -34,7 +34,7 @@
           "id": "https://arstechnica.com/gaming/2026/10/why-biowares-neverwinter-nights-still-has-thousands-of-active-players/",
           "link": "https://arstechnica.com/gaming/2026/10/why-biowares-neverwinter-nights-still-has-thousands-of-active-players/",
           "published": "Sat, 17 Oct 2026 11:00:21 +0000",
-          "read": false,
+          "read": true,
           "starred": false,
           "summary": "The single-player is just OK, but according to the players, that doesn't matter.",
           "title": "Why BioWare's Neverwinter Nights still has thousands of active players"
@@ -383,7 +383,7 @@
         "startups"
       ],
       "favicon": "iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAMAAABhEH5lAAAAPFBMVEX/ZgD/////+fX/vZL/7OD/bAv/9O3/jUL/v5X/p23/nFr/2L7/cBL/6dr/iDn/sHz/mFT/1Lf/3sn/oGHk31anAAAAQklEQVQYlWNgoDJgZWMBkuyMHEhinIxcDAzcTDzI6lh4GfgY+VG0CjAKCLKxohonxMIojGYDHyMvhq1MzNQTogIAANoJARPbxOAzAAAAAElFTkSuQmCC",
-      "last_fetched": "2026-10-19T03:40:00.304630+00:00",
+      "last_fetched": "2026-10-19T03:48:37.366417+00:00",
       "fetch_error": null,
       "articles": [
         {
@@ -444,7 +444,7 @@
           "id": "https://contextfirst.blog/superlite-hand-an-agent-a-spec/",
           "link": "https://contextfirst.blog/superlite-hand-an-agent-a-spec/",
           "published": "Mon, 19 Oct 2026 02:01:16 +0000",
-          "read": false,
+          "read": true,
           "starred": false,
           "summary": "<a href=\"https://news.ycombinator.com/item?id=50147492\">Comments</a>",
           "title": "Superlite: A Faster Alternatie to Superpowers"
@@ -934,7 +934,7 @@
       "category": "General",
       "tags": [],
       "favicon": "iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAbFBMVEWrICDBwcGVHBy2trampqaUlJSHh4fc3NxBQEDHx8dGRkdERERNTEwwMDAgICAkIyM9PD3g4OArKSkcGxxVVVQAAAAmJSZRUE81NDQsLCxBQUMyMTI6Nzc9PTzc1dXg2dm/mZkOEBDOzs4kGBgFm4nfAAAAs0lEQVQYlT3P0W7DMAhAUTqnNbZjIHZDcZNsa/f//zh7q3okeLgSD8B8Xfd4etG4wu1mmNwQk2szwjznI06D4NTwDhibyXnYj3OJApJK3i7DbhdFgT0RMRNrX9TEeoiIKIJHQjPbwJJ+vHEuYMifw9dAW4FNeFn84v1YlBsUIQ/d2mehflKMvsMDIPQQaiugRvCEP97XpqC5Pr3/Lz+VFbjUEMan4RRCVQbWh5ucG8m5yvUX5uwMuBMCWQ4AAAAASUVORK5CYII=",
-      "last_fetched": "2026-10-19T03:40:05.222574+00:00",
+      "last_fetched": "2026-10-19T03:48:39.209176+00:00",
       "fetch_error": null,
       "articles": [
         {
@@ -1004,7 +1004,7 @@
           "id": "https://www.indiegamebundles.com/?p=66506",
           "link": "https://www.indiegamebundles.com/humble-serenity-forge-emotional-impact-bundle-18-steam-items-for-just-12/",
           "published": "2026-10-18T17:11:08Z",
-          "read": false,
+          "read": true,
           "starred": false,
           "summary": "<p>The bundle collects LISA: The Painful,\u00a0Gone Home,\u00a0Tacoma,\u00a0Death's Gambit: Afterlife, and\u00a0Long Gone Days.</p>\n<p>The post <a href=\"https://www.indiegamebundles.com/humble-serenity-forge-emotional-impact-bundle-18-steam-items-for-just-12/\">Humble Serenity Forge Emotional Impact Bundle: 18 Steam Items for Just $12</a> appeared first on <a href=\"https://www.indiegamebundles.com\">Indie Game Bundles</a>.</p>",
           "title": "Humble Serenity Forge Emotional Impact Bundle: 18 Steam Items for Just $12"
@@ -1013,7 +1013,7 @@
           "id": "https://www.indiegamebundles.com/?p=66503",
           "link": "https://www.indiegamebundles.com/humble-double-fine-publisher-bundle-11-steam-games-for-just-8/",
           "published": "2026-10-18T16:52:45Z",
-          "read": false,
+          "read": true,
           "starred": false,
           "summary": "<p>Humble Bundle has launched the\u00a0Double Fine Publisher Bundle, offering 11 Steam games from Double Fine Productions for just\u00a0$8.</p>\n<p>The post <a href=\"https://www.indiegamebundles.com/humble-double-fine-publisher-bundle-11-steam-games-for-just-8/\">Humble Double Fine Publisher Bundle: 11 Steam Games for Just $8</a> appeared first on <a href=\"https://www.indiegamebundles.com\">Indie Game Bundles</a>.</p>",
           "title": "Humble Double Fine Publisher Bundle: 11 Steam Games for Just $8"
