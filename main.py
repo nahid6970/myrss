@@ -52,7 +52,7 @@ QMainWindow, QDialog {{
 }}
 QWidget {{
     color: {CP_TEXT};
-    font-family: 'Consolas', 'Courier New', monospace;
+    font-family: 'JetBrainsMono NF', 'JetBrains Mono', 'Consolas', monospace;
     font-size: 10pt;
 }}
 QLineEdit, QSpinBox, QTextEdit, QTextBrowser {{
@@ -1140,7 +1140,7 @@ class MyRSSApp(QMainWindow):
                 body {{
                     background-color: {CP_PANEL};
                     color: {CP_TEXT};
-                    font-family: 'Consolas', monospace;
+                    font-family: 'JetBrainsMono NF', 'JetBrains Mono', 'Consolas', monospace;
                     font-size: 10pt;
                     line-height: 1.6;
                     padding: 10px;
