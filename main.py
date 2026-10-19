@@ -710,7 +710,7 @@ class MyRSSApp(QMainWindow):
         top_bar.addWidget(restart_btn)
         root_layout.addLayout(top_bar)
 
-        # 2. MAIN HORIZONTAL SPLITTER
+        # 2. MAIN SPLITTER: FEED NAVIGATION LEFT, ARTICLES ABOVE READER
         splitter = QSplitter(Qt.Orientation.Horizontal)
 
         # SIDEBAR (LEFT)
@@ -772,7 +772,8 @@ class MyRSSApp(QMainWindow):
         self.article_list_widget.itemClicked.connect(self.on_article_selected)
         list_layout.addWidget(self.article_list_widget, 1)
 
-        splitter.addWidget(list_container)
+        content_splitter = QSplitter(Qt.Orientation.Vertical)
+        content_splitter.addWidget(list_container)
 
         # ARTICLE READER PANE (RIGHT)
         reader_container = QWidget()
@@ -806,18 +807,22 @@ class MyRSSApp(QMainWindow):
 
         reader_layout.addWidget(self.reader_title)
         reader_layout.addWidget(self.reader_meta)
-        reader_layout.addLayout(reader_toolbar)
 
         # Text Viewer
         self.article_browser = QTextBrowser()
         self.article_browser.setOpenExternalLinks(True)
         reader_layout.addWidget(self.article_browser, 1)
+        reader_layout.addLayout(reader_toolbar)
 
-        splitter.addWidget(reader_container)
+        content_splitter.addWidget(reader_container)
+        content_splitter.setStretchFactor(0, 2)
+        content_splitter.setStretchFactor(1, 3)
+        content_splitter.setSizes([240, 420])
 
-        splitter.setStretchFactor(0, 2)
-        splitter.setStretchFactor(1, 3)
-        splitter.setStretchFactor(2, 4)
+        splitter.addWidget(content_splitter)
+        splitter.setStretchFactor(0, 1)
+        splitter.setStretchFactor(1, 4)
+        splitter.setSizes([230, 950])
         root_layout.addWidget(splitter, 1)
 
         # 3. STATUS BAR (Fixed compact height with panel border)
