@@ -736,62 +736,16 @@ class MyRSSApp(QMainWindow):
     def populate_sidebar(self):
         self.nav_tree.clear()
 
-        # 1. ROOT: ALL FEEDS
-        total_unread_all = sum(len([a for a in f.get("articles", []) if not a.get("read", False)]) for f in self.feeds)
-        all_root = QTreeWidgetItem(self.nav_tree, [f"⚡ ALL FEEDS [{total_unread_all}]"])
-        all_root.setData(0, Qt.ItemDataRole.UserRole, ("ALL_FEEDS", None))
-        all_root.setForeground(0, QColor(CP_CYAN))
-
-        # Nested flat list under All Feeds
+        # Keep the sidebar focused on one flat list of feeds.
         for feed in self.feeds:
             unread_count = len([a for a in feed.get("articles", []) if not a.get("read", False)])
-            feed_item = QTreeWidgetItem(all_root, [f"{feed.get('title') or feed.get('url')} [{unread_count}]"])
+            feed_item = QTreeWidgetItem(self.nav_tree, [f"{feed.get('title') or feed.get('url')} [{unread_count}]"])
             feed_item.setData(0, Qt.ItemDataRole.UserRole, ("FEED", feed))
             pix = base64_to_pixmap(feed.get("favicon", ""))
             if pix:
                 feed_item.setIcon(0, QIcon(pix))
             if feed.get("fetch_error"):
                 feed_item.setForeground(0, QColor(CP_RED))
-
-        # 2. ROOT: CATEGORIES / FOLDERS
-        categories_map = {}
-        for feed in self.feeds:
-            cat = feed.get("category", "General") or "General"
-            categories_map.setdefault(cat, []).append(feed)
-
-        cat_root = QTreeWidgetItem(self.nav_tree, ["📁 CATEGORIES"])
-        cat_root.setData(0, Qt.ItemDataRole.UserRole, ("SECTION", None))
-        cat_root.setForeground(0, QColor(CP_YELLOW))
-
-        for cat_name, feeds_in_cat in sorted(categories_map.items()):
-            cat_unread = sum(len([a for a in f.get("articles", []) if not a.get("read", False)]) for f in feeds_in_cat)
-            cat_item = QTreeWidgetItem(cat_root, [f"{cat_name} [{cat_unread}]"])
-            cat_item.setData(0, Qt.ItemDataRole.UserRole, ("CATEGORY", cat_name))
-
-            for feed in feeds_in_cat:
-                unread = len([a for a in feed.get("articles", []) if not a.get("read", False)])
-                f_item = QTreeWidgetItem(cat_item, [f"{feed.get('title') or feed.get('url')} [{unread}]"])
-                f_item.setData(0, Qt.ItemDataRole.UserRole, ("FEED", feed))
-                pix = base64_to_pixmap(feed.get("favicon", ""))
-                if pix:
-                    f_item.setIcon(0, QIcon(pix))
-                if feed.get("fetch_error"):
-                    f_item.setForeground(0, QColor(CP_RED))
-
-        # 3. ROOT: TAGS
-        tags_map = {}
-        for feed in self.feeds:
-            for tag in feed.get("tags", []):
-                tags_map.setdefault(tag, []).append(feed)
-
-        tag_root = QTreeWidgetItem(self.nav_tree, ["🏷 TAGS"])
-        tag_root.setData(0, Qt.ItemDataRole.UserRole, ("SECTION", None))
-        tag_root.setForeground(0, QColor(CP_ORANGE))
-
-        for tag_name, feeds_with_tag in sorted(tags_map.items()):
-            tag_unread = sum(len([a for a in f.get("articles", []) if not a.get("read", False)]) for f in feeds_with_tag)
-            tag_item = QTreeWidgetItem(tag_root, [f"#{tag_name} [{tag_unread}]"])
-            tag_item.setData(0, Qt.ItemDataRole.UserRole, ("TAG", tag_name))
 
         self.nav_tree.expandAll()
 

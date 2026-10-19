@@ -9,9 +9,189 @@
         "science"
       ],
       "favicon": "",
-      "last_fetched": "2026-10-15T05:53:49.051886+00:00",
+      "last_fetched": "2026-10-19T03:38:57.164089+00:00",
       "fetch_error": null,
       "articles": [
+        {
+          "id": "https://arstechnica.com/ai/2026/10/anthropic-gives-outside-ai-watchdog-employee-like-access/",
+          "link": "https://arstechnica.com/ai/2026/10/anthropic-gives-outside-ai-watchdog-employee-like-access/",
+          "published": "Sun, 18 Oct 2026 16:25:19 +0000",
+          "read": false,
+          "starred": false,
+          "summary": "The outside watchdog can publish its findings without Anthropic's approval.",
+          "title": "Anthropic gives outside AI watchdog \u201cemployee-like\u201d access"
+        },
+        {
+          "id": "https://arstechnica.com/science/2026/10/science-says-your-boss-should-talk-less-in-meetings/",
+          "link": "https://arstechnica.com/science/2026/10/science-says-your-boss-should-talk-less-in-meetings/",
+          "published": "Sat, 17 Oct 2026 11:15:11 +0000",
+          "read": false,
+          "starred": false,
+          "summary": "Research suggests listening more while talking less. Killing aimless meetings can help, too.",
+          "title": "Science says your boss should talk less in meetings"
+        },
+        {
+          "id": "https://arstechnica.com/gaming/2026/10/why-biowares-neverwinter-nights-still-has-thousands-of-active-players/",
+          "link": "https://arstechnica.com/gaming/2026/10/why-biowares-neverwinter-nights-still-has-thousands-of-active-players/",
+          "published": "Sat, 17 Oct 2026 11:00:21 +0000",
+          "read": false,
+          "starred": false,
+          "summary": "The single-player is just OK, but according to the players, that doesn't matter.",
+          "title": "Why BioWare's Neverwinter Nights still has thousands of active players"
+        },
+        {
+          "id": "https://arstechnica.com/security/2026/10/openai-models-hacked-a-crypto-wallet-and-breached-more-websites/",
+          "link": "https://arstechnica.com/security/2026/10/openai-models-hacked-a-crypto-wallet-and-breached-more-websites/",
+          "published": "Fri, 16 Oct 2026 20:59:01 +0000",
+          "read": false,
+          "starred": false,
+          "summary": "The actions could have resulted in criminal charges had humans been behind the keyboard.",
+          "title": "OpenAI models hacked a crypto wallet and breached more websites"
+        },
+        {
+          "id": "https://arstechnica.com/tech-policy/2026/10/thegentlemanpervert-producing-ai-csam-is-a-nj-prosecutor-say-cops/",
+          "link": "https://arstechnica.com/tech-policy/2026/10/thegentlemanpervert-producing-ai-csam-is-a-nj-prosecutor-say-cops/",
+          "published": "Fri, 16 Oct 2026 20:20:07 +0000",
+          "read": false,
+          "starred": false,
+          "summary": "Discord user flagged AI CSAM, triggering arrest of New Jersey deputy AG.",
+          "title": "\u201cthegentlemanpervert\u201d producing AI CSAM is a NJ prosecutor, say cops"
+        },
+        {
+          "id": "https://arstechnica.com/gaming/2026/10/us-rep-proposes-bill-to-give-video-game-buyers-ownership-not-a-license/",
+          "link": "https://arstechnica.com/gaming/2026/10/us-rep-proposes-bill-to-give-video-game-buyers-ownership-not-a-license/",
+          "published": "Fri, 16 Oct 2026 19:41:18 +0000",
+          "read": false,
+          "starred": false,
+          "summary": "There are still significant hurdles ahead, both technical and legislative.",
+          "title": "US Rep proposes bill to give video game buyers \"ownership,\" not \"a license\""
+        },
+        {
+          "id": "https://arstechnica.com/gadgets/2026/10/ray-ban-meta-smart-glasses-found-recording-audio-without-wearers-consent/",
+          "link": "https://arstechnica.com/gadgets/2026/10/ray-ban-meta-smart-glasses-found-recording-audio-without-wearers-consent/",
+          "published": "Fri, 16 Oct 2026 19:11:50 +0000",
+          "read": false,
+          "starred": false,
+          "summary": "The bug is fixed, but privacy concerns remain.",
+          "title": "Bug turns one of the biggest fears about Ray-Ban Meta smart glasses into reality"
+        },
+        {
+          "id": "https://arstechnica.com/health/2026/10/rfk-jr-proposes-fda-look-the-other-way-on-unproven-peptides-report-says/",
+          "link": "https://arstechnica.com/health/2026/10/rfk-jr-proposes-fda-look-the-other-way-on-unproven-peptides-report-says/",
+          "published": "Fri, 16 Oct 2026 17:05:59 +0000",
+          "read": false,
+          "starred": false,
+          "summary": "FDA scientists said none of the popular drugs have been proven safe or effective.",
+          "title": "RFK Jr. proposes FDA look the other way on unproven peptides, report says"
+        },
+        {
+          "id": "https://arstechnica.com/tech-policy/2026/10/meta-may-use-sweeping-new-commercial-tos-to-avoid-millions-in-ai-licensing-fees/",
+          "link": "https://arstechnica.com/tech-policy/2026/10/meta-may-use-sweeping-new-commercial-tos-to-avoid-millions-in-ai-licensing-fees/",
+          "published": "Fri, 16 Oct 2026 15:41:00 +0000",
+          "read": false,
+          "starred": false,
+          "summary": "Meta \u201cstreamlined\u201d its commercial TOS. Legal experts warn it\u2019s an AI power grab.",
+          "title": "Meta may use sweeping new commercial TOS to avoid millions in AI licensing fees"
+        },
+        {
+          "id": "https://arstechnica.com/tech-policy/2026/10/polymarket-saw-600-million-in-election-trades-after-the-elections-were-over/",
+          "link": "https://arstechnica.com/tech-policy/2026/10/polymarket-saw-600-million-in-election-trades-after-the-elections-were-over/",
+          "published": "Fri, 16 Oct 2026 14:19:22 +0000",
+          "read": false,
+          "starred": false,
+          "summary": "Millions kept changing hands long after the election outcomes were effectively settled.",
+          "title": "Polymarket saw $600 million in election trades after the elections were over"
+        },
+        {
+          "id": "https://arstechnica.com/cars/2026/10/tesla-turns-to-50-year-old-stunt-technology-as-it-tries-to-roadster-again/",
+          "link": "https://arstechnica.com/cars/2026/10/tesla-turns-to-50-year-old-stunt-technology-as-it-tries-to-roadster-again/",
+          "published": "Fri, 16 Oct 2026 14:03:25 +0000",
+          "read": false,
+          "starred": false,
+          "summary": "If you want to make a car spin in the air, compressed gas is a good way to do it.",
+          "title": "Tesla turns to 50-year-old stunt technology as it tries to Roadster again"
+        },
+        {
+          "id": "https://arstechnica.com/tech-policy/2026/10/romance-scam-doc-super-scam-me-takes-viewers-deep-into-love-bombing-terrain/",
+          "link": "https://arstechnica.com/tech-policy/2026/10/romance-scam-doc-super-scam-me-takes-viewers-deep-into-love-bombing-terrain/",
+          "published": "Fri, 16 Oct 2026 14:00:59 +0000",
+          "read": false,
+          "starred": false,
+          "summary": "Watch an exclusive clip from <em>Super Scam Me</em> where a victim tracks down her scammer.",
+          "title": "Super Scam Me documentary shows what it takes to catch a romance scammer"
+        },
+        {
+          "id": "https://arstechnica.com/reviews/2026/10/the-surface-laptop-ultra-delivers-on-most-of-microsofts-promises/",
+          "link": "https://arstechnica.com/reviews/2026/10/the-surface-laptop-ultra-delivers-on-most-of-microsofts-promises/",
+          "published": "Fri, 16 Oct 2026 12:00:05 +0000",
+          "read": false,
+          "starred": false,
+          "summary": "Microsoft promises one machine for dev, AI, and gaming, and mostly gets there.",
+          "title": "The Surface Laptop Ultra delivers on most of Microsoft's promises"
+        },
+        {
+          "id": "https://arstechnica.com/space/2026/10/rocket-report-faa-eyes-more-starbase-traffic-indias-skyroot-snares-us-customer/",
+          "link": "https://arstechnica.com/space/2026/10/rocket-report-faa-eyes-more-starbase-traffic-indias-skyroot-snares-us-customer/",
+          "published": "Fri, 16 Oct 2026 11:00:53 +0000",
+          "read": false,
+          "starred": false,
+          "summary": "The pioneering reusable upper stage for Stoke Space's Nova rocket ships out for testing.",
+          "title": "Rocket Report: FAA eyes more Starbase traffic; India's Skyroot snares US customer"
+        },
+        {
+          "id": "https://arstechnica.com/space/2026/10/blue-origin-is-going-all-in-on-the-new-glenn-rocket/",
+          "link": "https://arstechnica.com/space/2026/10/blue-origin-is-going-all-in-on-the-new-glenn-rocket/",
+          "published": "Fri, 16 Oct 2026 10:00:54 +0000",
+          "read": false,
+          "starred": false,
+          "summary": "The infrastructure is designed to support multiple flights per week by the end of the decade.",
+          "title": "Blue Origin is going all in on the New Glenn rocket"
+        },
+        {
+          "id": "https://arstechnica.com/reviews/2026/10/googlebook-review-android-on-a-laptop-is-still-android/",
+          "link": "https://arstechnica.com/reviews/2026/10/googlebook-review-android-on-a-laptop-is-still-android/",
+          "published": "Fri, 16 Oct 2026 10:00:32 +0000",
+          "read": false,
+          "starred": false,
+          "summary": "Android laptops are here, but Google has a lot of work ahead to make them good.",
+          "title": "Googlebook review: Android on a laptop is still Android"
+        },
+        {
+          "id": "https://arstechnica.com/gadgets/2026/10/kde-turns-30-with-plasma-6-8-remote-upgrades-and-an-x11-farewell/",
+          "link": "https://arstechnica.com/gadgets/2026/10/kde-turns-30-with-plasma-6-8-remote-upgrades-and-an-x11-farewell/",
+          "published": "Thu, 15 Oct 2026 22:21:06 +0000",
+          "read": false,
+          "starred": false,
+          "summary": "KDE celebrates 30 years with a new Plasma release, a farewell to X11, and a movie.",
+          "title": "KDE turns 30 with Plasma 6.8, remote upgrades, and an X11 farewell"
+        },
+        {
+          "id": "https://arstechnica.com/gadgets/2026/10/plex-now-helps-sell-movie-theater-tickets/",
+          "link": "https://arstechnica.com/gadgets/2026/10/plex-now-helps-sell-movie-theater-tickets/",
+          "published": "Thu, 15 Oct 2026 21:22:15 +0000",
+          "read": false,
+          "starred": false,
+          "summary": "Discovery data from Plex users will help studios, advertisers.",
+          "title": "Plex now helps sell movie theater tickets"
+        },
+        {
+          "id": "https://arstechnica.com/health/2026/10/hegseths-dubious-low-t-screening-may-flag-up-to-25-percent-of-the-army/",
+          "link": "https://arstechnica.com/health/2026/10/hegseths-dubious-low-t-screening-may-flag-up-to-25-percent-of-the-army/",
+          "published": "Thu, 15 Oct 2026 21:09:57 +0000",
+          "read": false,
+          "starred": false,
+          "summary": "Medical experts explicitly recommend against blanket screenings.",
+          "title": "Hegseth\u2019s dubious low-T screening may flag up to 25 percent of the Army"
+        },
+        {
+          "id": "https://arstechnica.com/security/2026/10/targeted-ads-delivered-0-click-exploits-to-install-mercenary-malware/",
+          "link": "https://arstechnica.com/security/2026/10/targeted-ads-delivered-0-click-exploits-to-install-mercenary-malware/",
+          "published": "Thu, 15 Oct 2026 20:32:41 +0000",
+          "read": false,
+          "starred": false,
+          "summary": "The incident is likely 1st confirmation of mercenary spyware delivered by targeted ads.",
+          "title": "Targeted ads delivered 0-click exploits to install mercenary malware"
+        },
         {
           "id": "https://arstechnica.com/security/2026/10/fridge-hack-costing-millions-and-sparking-fires-stemmed-from-poor-security/",
           "link": "https://arstechnica.com/security/2026/10/fridge-hack-costing-millions-and-sparking-fires-stemmed-from-poor-security/",
@@ -203,9 +383,297 @@
         "startups"
       ],
       "favicon": "iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAMAAABhEH5lAAAAPFBMVEX/ZgD/////+fX/vZL/7OD/bAv/9O3/jUL/v5X/p23/nFr/2L7/cBL/6dr/iDn/sHz/mFT/1Lf/3sn/oGHk31anAAAAQklEQVQYlWNgoDJgZWMBkuyMHEhinIxcDAzcTDzI6lh4GfgY+VG0CjAKCLKxohonxMIojGYDHyMvhq1MzNQTogIAANoJARPbxOAzAAAAAElFTkSuQmCC",
-      "last_fetched": "2026-10-15T05:53:51.913945+00:00",
+      "last_fetched": "2026-10-19T03:39:02.010211+00:00",
       "fetch_error": null,
       "articles": [
+        {
+          "id": "https://arxiv.org/abs/2610.18861",
+          "link": "https://arxiv.org/abs/2610.18861",
+          "published": "Sun, 18 Oct 2026 20:48:14 +0000",
+          "read": false,
+          "starred": false,
+          "summary": "<a href=\"https://news.ycombinator.com/item?id=50145337\">Comments</a>",
+          "title": "Hybrid Reasoning Agents: LLM agents that think in latent space, act through text"
+        },
+        {
+          "id": "https://colo.to/cyberspace.html",
+          "link": "https://colo.to/cyberspace.html",
+          "published": "Sun, 18 Oct 2026 23:37:57 +0000",
+          "read": false,
+          "starred": false,
+          "summary": "<a href=\"https://news.ycombinator.com/item?id=50146625\">Comments</a>",
+          "title": "William Gibson and the trademarking of cyberspace"
+        },
+        {
+          "id": "https://www.youtube.com/watch?v=LKrwhjOI8Nc",
+          "link": "https://www.youtube.com/watch?v=LKrwhjOI8Nc",
+          "published": "Sat, 17 Oct 2026 23:26:35 +0000",
+          "read": false,
+          "starred": false,
+          "summary": "<a href=\"https://news.ycombinator.com/item?id=50136150\">Comments</a>",
+          "title": "There's never been a better time to go into math (by: 3blue1brown) [video]"
+        },
+        {
+          "id": "https://karrisaarinen.com/posts/someone-behind-the-software/",
+          "link": "https://karrisaarinen.com/posts/someone-behind-the-software/",
+          "published": "Sun, 18 Oct 2026 16:32:00 +0000",
+          "read": false,
+          "starred": false,
+          "summary": "<a href=\"https://news.ycombinator.com/item?id=50142573\">Comments</a>",
+          "title": "Someone behind the software"
+        },
+        {
+          "id": "https://jrdsgl.com/if-you-dont-run-your-own-llm-proxy-how-the-fuck-do-you-even-know-whats-going-on/",
+          "link": "https://jrdsgl.com/if-you-dont-run-your-own-llm-proxy-how-the-fuck-do-you-even-know-whats-going-on/",
+          "published": "Sun, 18 Oct 2026 21:09:12 +0000",
+          "read": false,
+          "starred": false,
+          "summary": "<a href=\"https://news.ycombinator.com/item?id=50145507\">Comments</a>",
+          "title": "If you don't run your own LLM proxy, how do you know whats going on?"
+        },
+        {
+          "id": "https://www.maddox.pro/?p=448",
+          "link": "https://www.maddox.pro/?p=448",
+          "published": "Thu, 15 Oct 2026 22:56:23 +0000",
+          "read": false,
+          "starred": false,
+          "summary": "<a href=\"https://news.ycombinator.com/item?id=50111537\">Comments</a>",
+          "title": "Laptop Based on 6502 CPU"
+        },
+        {
+          "id": "https://contextfirst.blog/superlite-hand-an-agent-a-spec/",
+          "link": "https://contextfirst.blog/superlite-hand-an-agent-a-spec/",
+          "published": "Mon, 19 Oct 2026 02:01:16 +0000",
+          "read": false,
+          "starred": false,
+          "summary": "<a href=\"https://news.ycombinator.com/item?id=50147492\">Comments</a>",
+          "title": "Superlite: A Faster Alternatie to Superpowers"
+        },
+        {
+          "id": "https://github.com/VikOlliver/RepRapMicron/wiki",
+          "link": "https://github.com/VikOlliver/RepRapMicron/wiki",
+          "published": "Sun, 18 Oct 2026 13:48:48 +0000",
+          "read": false,
+          "starred": false,
+          "summary": "<a href=\"https://news.ycombinator.com/item?id=50141076\">Comments</a>",
+          "title": "RepRapMicron"
+        },
+        {
+          "id": "https://www.getlazarus.org/dynamic/",
+          "link": "https://www.getlazarus.org/dynamic/",
+          "published": "Sun, 18 Oct 2026 18:48:04 +0000",
+          "read": false,
+          "starred": false,
+          "summary": "<a href=\"https://news.ycombinator.com/item?id=50144066\">Comments</a>",
+          "title": "Free Pascal compiler now supports dynamic packages"
+        },
+        {
+          "id": "https://www.sciencealert.com/dogs-seem-to-agree-with-humans-that-bouba-is-round-and-kiki-is-spiky",
+          "link": "https://www.sciencealert.com/dogs-seem-to-agree-with-humans-that-bouba-is-round-and-kiki-is-spiky",
+          "published": "Sun, 18 Oct 2026 01:38:08 +0000",
+          "read": false,
+          "starred": false,
+          "summary": "<a href=\"https://news.ycombinator.com/item?id=50136979\">Comments</a>",
+          "title": "Dogs seem to agree with humans that 'bouba' is round and 'kiki' is spiky"
+        },
+        {
+          "id": "https://www.csis.org/analysis/how-quickly-can-dod-rebuild-and-recast-munitions-industrial-base",
+          "link": "https://www.csis.org/analysis/how-quickly-can-dod-rebuild-and-recast-munitions-industrial-base",
+          "published": "Sun, 18 Oct 2026 23:37:54 +0000",
+          "read": false,
+          "starred": false,
+          "summary": "<a href=\"https://news.ycombinator.com/item?id=50146624\">Comments</a>",
+          "title": "How Quickly Can the DoD Rebuild and Recast the Munitions Industrial Base?"
+        },
+        {
+          "id": "https://github.com/finereli/whatsapp-mcp",
+          "link": "https://github.com/finereli/whatsapp-mcp",
+          "published": "Sun, 18 Oct 2026 21:36:10 +0000",
+          "read": false,
+          "starred": false,
+          "summary": "<a href=\"https://news.ycombinator.com/item?id=50145715\">Comments</a>",
+          "title": "Show HN: WhatsApp MCP running free on Cloudflare"
+        },
+        {
+          "id": "https://blog.picheta.me/post/killswitch-lang/",
+          "link": "https://blog.picheta.me/post/killswitch-lang/",
+          "published": "Sat, 17 Oct 2026 22:26:47 +0000",
+          "read": false,
+          "starred": false,
+          "summary": "<a href=\"https://news.ycombinator.com/item?id=50135762\">Comments</a>",
+          "title": "I built a programming language that LLMs can't use"
+        },
+        {
+          "id": "https://github.com/ardiri/palmos-lemmings",
+          "link": "https://github.com/ardiri/palmos-lemmings",
+          "published": "Sun, 18 Oct 2026 17:56:59 +0000",
+          "read": false,
+          "starred": false,
+          "summary": "<a href=\"https://news.ycombinator.com/item?id=50143536\">Comments</a>",
+          "title": "PalmOS Lemmings"
+        },
+        {
+          "id": "https://quentinkaiser.be/security/2026/10/16/one-parser-two-bugs/",
+          "link": "https://quentinkaiser.be/security/2026/10/16/one-parser-two-bugs/",
+          "published": "Fri, 16 Oct 2026 18:07:44 +0000",
+          "read": false,
+          "starred": false,
+          "summary": "<a href=\"https://news.ycombinator.com/item?id=50122058\">Comments</a>",
+          "title": "One parser, two bugs, many routers: Exploiting Broadcom WiFi across eCos, Linux"
+        },
+        {
+          "id": "https://unsung.aresluna.org/traditional-but-puzzling/",
+          "link": "https://unsung.aresluna.org/traditional-but-puzzling/",
+          "published": "Fri, 16 Oct 2026 19:17:23 +0000",
+          "read": false,
+          "starred": false,
+          "summary": "<a href=\"https://news.ycombinator.com/item?id=50123123\">Comments</a>",
+          "title": "\"Traditional, but Puzzling\""
+        },
+        {
+          "id": "https://dns.museum",
+          "link": "https://dns.museum",
+          "published": "Fri, 16 Oct 2026 22:21:34 +0000",
+          "read": false,
+          "starred": false,
+          "summary": "<a href=\"https://news.ycombinator.com/item?id=50125551\">Comments</a>",
+          "title": "The DNS Museum"
+        },
+        {
+          "id": "https://www.404media.co/watch-footage-of-the-flock-search-a-judge-ruled-unconstitutional/",
+          "link": "https://www.404media.co/watch-footage-of-the-flock-search-a-judge-ruled-unconstitutional/",
+          "published": "Mon, 19 Oct 2026 01:55:03 +0000",
+          "read": false,
+          "starred": false,
+          "summary": "<a href=\"https://news.ycombinator.com/item?id=50147455\">Comments</a>",
+          "title": "Footage of the Flock search that a judge ruled was uncosntitutional"
+        },
+        {
+          "id": "https://www.dantleech.com/blog/2026/10/15/faster-command-recall-with-substring-search./",
+          "link": "https://www.dantleech.com/blog/2026/10/15/faster-command-recall-with-substring-search./",
+          "published": "Thu, 15 Oct 2026 12:52:54 +0000",
+          "read": false,
+          "starred": false,
+          "summary": "<a href=\"https://news.ycombinator.com/item?id=50102932\">Comments</a>",
+          "title": "Faster command recall with substring search"
+        },
+        {
+          "id": "https://www.youtube.com/watch?v=OJ1WYyO2jdY",
+          "link": "https://www.youtube.com/watch?v=OJ1WYyO2jdY",
+          "published": "Thu, 15 Oct 2026 01:51:02 +0000",
+          "read": false,
+          "starred": false,
+          "summary": "<a href=\"https://news.ycombinator.com/item?id=50098148\">Comments</a>",
+          "title": "16-bit fully functional DIY magnetic core memory"
+        },
+        {
+          "id": "https://neilmadden.blog/2026/04/24/java-sealed-classes-and-exhaustive-pattern-matching/",
+          "link": "https://neilmadden.blog/2026/04/24/java-sealed-classes-and-exhaustive-pattern-matching/",
+          "published": "Sun, 18 Oct 2026 14:47:37 +0000",
+          "read": false,
+          "starred": false,
+          "summary": "<a href=\"https://news.ycombinator.com/item?id=50141579\">Comments</a>",
+          "title": "Java sealed classes and exhaustive pattern matching"
+        },
+        {
+          "id": "https://www.newyorker.com/magazine/2026/10/19/the-first-candid",
+          "link": "https://www.newyorker.com/magazine/2026/10/19/the-first-candid",
+          "published": "Fri, 16 Oct 2026 17:28:19 +0000",
+          "read": false,
+          "starred": false,
+          "summary": "<a href=\"https://news.ycombinator.com/item?id=50121506\">Comments</a>",
+          "title": "The First Candid"
+        },
+        {
+          "id": "https://anderegg.ca/2026/10/18/what-the-heck-is-pkg",
+          "link": "https://anderegg.ca/2026/10/18/what-the-heck-is-pkg",
+          "published": "Sun, 18 Oct 2026 17:21:23 +0000",
+          "read": false,
+          "starred": false,
+          "summary": "<a href=\"https://news.ycombinator.com/item?id=50143154\">Comments</a>",
+          "title": "What the heck is /pkg?"
+        },
+        {
+          "id": "https://www.nytimes.com/2026/10/16/us/math-ai-terence-tao.html",
+          "link": "https://www.nytimes.com/2026/10/16/us/math-ai-terence-tao.html",
+          "published": "Fri, 16 Oct 2026 13:30:20 +0000",
+          "read": false,
+          "starred": false,
+          "summary": "<a href=\"https://news.ycombinator.com/item?id=50118165\">Comments</a>",
+          "title": "\"I'm on a war footing\": Terry Tao and the crisis in math"
+        },
+        {
+          "id": "https://verdagon.dev/blog/reverse-borrow-checking",
+          "link": "https://verdagon.dev/blog/reverse-borrow-checking",
+          "published": "Sun, 18 Oct 2026 12:11:13 +0000",
+          "read": false,
+          "starred": false,
+          "summary": "<a href=\"https://news.ycombinator.com/item?id=50140383\">Comments</a>",
+          "title": "A new way to think about borrow checking (in reverse)"
+        },
+        {
+          "id": "https://www.righto.com/2026/10/8087-addition-subtraction-microcode.html",
+          "link": "https://www.righto.com/2026/10/8087-addition-subtraction-microcode.html",
+          "published": "Sun, 18 Oct 2026 16:20:27 +0000",
+          "read": false,
+          "starred": false,
+          "summary": "<a href=\"https://news.ycombinator.com/item?id=50142449\">Comments</a>",
+          "title": "The Intel 8087 chip: floating-point addition and subtraction"
+        },
+        {
+          "id": "https://www.reddit.com/r/sysadmin/comments/1x8cycd/namecheap_just_seized_and_disabled_all_my_domains/",
+          "link": "https://www.reddit.com/r/sysadmin/comments/1x8cycd/namecheap_just_seized_and_disabled_all_my_domains/",
+          "published": "Sun, 18 Oct 2026 16:56:56 +0000",
+          "read": false,
+          "starred": false,
+          "summary": "<a href=\"https://news.ycombinator.com/item?id=50142866\">Comments</a>",
+          "title": "Namecheap just seized and disabled all my domains"
+        },
+        {
+          "id": "https://github.com/0x23/MicroManipulatorStepper",
+          "link": "https://github.com/0x23/MicroManipulatorStepper",
+          "published": "Sun, 18 Oct 2026 11:16:22 +0000",
+          "read": false,
+          "starred": false,
+          "summary": "<a href=\"https://news.ycombinator.com/item?id=50140001\">Comments</a>",
+          "title": "Open MicroManipulator \u2013 A sub-micrometer 3D motion control plattform"
+        },
+        {
+          "id": "https://www.iwm.org.uk/history/iwm/cwr/telephone",
+          "link": "https://www.iwm.org.uk/history/iwm/cwr/telephone",
+          "published": "Wed, 14 Oct 2026 22:07:47 +0000",
+          "read": false,
+          "starred": false,
+          "summary": "<a href=\"https://news.ycombinator.com/item?id=50096110\">Comments</a>",
+          "title": "SIGSALY: Churchill's top secret hotline to the president"
+        },
+        {
+          "id": "https://eddieabbondanz.io/post/shop/drill-powered-scooter/",
+          "link": "https://eddieabbondanz.io/post/shop/drill-powered-scooter/",
+          "published": "Wed, 14 Oct 2026 18:53:52 +0000",
+          "read": false,
+          "starred": false,
+          "summary": "<a href=\"https://news.ycombinator.com/item?id=50093020\">Comments</a>",
+          "title": "I electrified my push scooter with a power drill"
+        },
+        {
+          "id": "https://github.com/andunieee/flipflop",
+          "link": "https://github.com/andunieee/flipflop",
+          "published": "Thu, 15 Oct 2026 04:25:28 +0000",
+          "read": false,
+          "starred": false,
+          "summary": "<a href=\"https://news.ycombinator.com/item?id=50099136\">Comments</a>",
+          "title": "Show HN: Flipflop, iroh-powered persistent tunnels for filesharing"
+        },
+        {
+          "id": "https://www.itsnicethat.com/features/david-rudnick-johnnie-campbell-arsenal-rocastle-typeface-graphic-design-spotlight-121026",
+          "link": "https://www.itsnicethat.com/features/david-rudnick-johnnie-campbell-arsenal-rocastle-typeface-graphic-design-spotlight-121026",
+          "published": "Mon, 12 Oct 2026 18:44:42 +0000",
+          "read": false,
+          "starred": false,
+          "summary": "<a href=\"https://news.ycombinator.com/item?id=50060923\">Comments</a>",
+          "title": "David Rudnick on \"borderline impossible\" process of designing Arsenal typeface"
+        },
         {
           "id": "https://jjmaxwell4.com/writing/things-to-know-when-you-get-cancer/",
           "link": "https://jjmaxwell4.com/writing/things-to-know-when-you-get-cancer/",
@@ -241,15 +709,6 @@
           "starred": false,
           "summary": "<a href=\"https://news.ycombinator.com/item?id=50097369\">Comments</a>",
           "title": "LFM2.5-24B-A2B: Built for fast on-device agents"
-        },
-        {
-          "id": "https://mapwriting.substack.com/p/dentists",
-          "link": "https://mapwriting.substack.com/p/dentists",
-          "published": "Mon, 12 Oct 2026 02:21:54 +0000",
-          "read": false,
-          "starred": false,
-          "summary": "<a href=\"https://news.ycombinator.com/item?id=50050553\">Comments</a>",
-          "title": "Do dentists know what they're doing?"
         },
         {
           "id": "https://www.wowhaus.co.uk/2026/10/12/donaldson-futuro-house-in-idyllwild-california-usa/",
@@ -322,15 +781,6 @@
           "starred": false,
           "summary": "<a href=\"https://news.ycombinator.com/item?id=50099121\">Comments</a>",
           "title": "An Apology"
-        },
-        {
-          "id": "https://ei3lh.eu/2026/10/11/the-toftwood-male-voice-choir-a-mystery-pressed-in-vinyl/",
-          "link": "https://ei3lh.eu/2026/10/11/the-toftwood-male-voice-choir-a-mystery-pressed-in-vinyl/",
-          "published": "Sun, 11 Oct 2026 20:36:56 +0000",
-          "read": true,
-          "starred": false,
-          "summary": "<a href=\"https://news.ycombinator.com/item?id=50047576\">Comments</a>",
-          "title": "The Toftwood Male Voice Choir: A Mystery Pressed in Vinyl"
         },
         {
           "id": "https://typesafe.ai/blog/jev-1-14",
@@ -475,6 +925,197 @@
           "starred": false,
           "summary": "<a href=\"https://news.ycombinator.com/item?id=50090932\">Comments</a>",
           "title": "Show HN: I wrote an email app that accepts only one sender per inbox"
+        }
+      ]
+    },
+    {
+      "url": "https://www.indiegamebundles.com/feed/atom/",
+      "title": "Free Games",
+      "category": "General",
+      "tags": [],
+      "favicon": "iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAbFBMVEWrICDBwcGVHBy2trampqaUlJSHh4fc3NxBQEDHx8dGRkdERERNTEwwMDAgICAkIyM9PD3g4OArKSkcGxxVVVQAAAAmJSZRUE81NDQsLCxBQUMyMTI6Nzc9PTzc1dXg2dm/mZkOEBDOzs4kGBgFm4nfAAAAs0lEQVQYlT3P0W7DMAhAUTqnNbZjIHZDcZNsa/f//zh7q3okeLgSD8B8Xfd4etG4wu1mmNwQk2szwjznI06D4NTwDhibyXnYj3OJApJK3i7DbhdFgT0RMRNrX9TEeoiIKIJHQjPbwJJ+vHEuYMifw9dAW4FNeFn84v1YlBsUIQ/d2mehflKMvsMDIPQQaiugRvCEP97XpqC5Pr3/Lz+VFbjUEMan4RRCVQbWh5ucG8m5yvUX5uwMuBMCWQ4AAAAASUVORK5CYII=",
+      "last_fetched": "2026-10-19T03:39:03.603430+00:00",
+      "fetch_error": null,
+      "articles": [
+        {
+          "id": "https://www.indiegamebundles.com/?p=66464",
+          "link": "https://www.indiegamebundles.com/fanatical-build-your-own-all-stars-bundle-winter-2026/",
+          "published": "2026-10-11T17:35:57Z",
+          "read": false,
+          "starred": false,
+          "summary": "<p>You can choose five games for $5.99, seven games for $8.05, or twelve games for $12.25.</p>\n<p>The post <a href=\"https://www.indiegamebundles.com/fanatical-build-your-own-all-stars-bundle-winter-2026/\">Fanatical Build Your Own All Stars Bundle Winter 2026</a> appeared first on <a href=\"https://www.indiegamebundles.com\">Indie Game Bundles</a>.</p>",
+          "title": "Fanatical Build Your Own All Stars Bundle Winter 2026"
+        },
+        {
+          "id": "https://www.indiegamebundles.com/?p=66459",
+          "link": "https://www.indiegamebundles.com/humble-twisted-trilogies-and-terrors-dark-visual-novels/",
+          "published": "2026-10-10T14:12:47Z",
+          "read": false,
+          "starred": false,
+          "summary": "<p>Sink your teeth into the Twisted Trilogies and Terrors: Dark Visual Novel Bundle, a seasonal collection of scary games! The content in this bundle is intended for mature audiences.</p>\n<p>The post <a href=\"https://www.indiegamebundles.com/humble-twisted-trilogies-and-terrors-dark-visual-novels/\">Humble Twisted Trilogies and Terrors: Dark Visual Novels</a> appeared first on <a href=\"https://www.indiegamebundles.com\">Indie Game Bundles</a>.</p>",
+          "title": "Humble Twisted Trilogies and Terrors: Dark Visual Novels"
+        },
+        {
+          "id": "https://www.indiegamebundles.com/?p=66456",
+          "link": "https://www.indiegamebundles.com/humble-gals-and-pals-pqube-japanese-games/",
+          "published": "2026-10-10T14:08:14Z",
+          "read": false,
+          "starred": false,
+          "summary": "<p>Fall into an intimate bundle of spicy Japanese games with the Gals and Pals Bundle published by PQube!</p>\n<p>The post <a href=\"https://www.indiegamebundles.com/humble-gals-and-pals-pqube-japanese-games/\">Humble Gals and Pals: PQube Japanese Games</a> appeared first on <a href=\"https://www.indiegamebundles.com\">Indie Game Bundles</a>.</p>",
+          "title": "Humble Gals and Pals: PQube Japanese Games"
+        },
+        {
+          "id": "https://www.indiegamebundles.com/?p=66448",
+          "link": "https://www.indiegamebundles.com/humble-triple-i-initiative-showcase-bundle/",
+          "published": "2026-10-09T17:33:38Z",
+          "read": false,
+          "starred": false,
+          "summary": "<p>Buckle up for The Triple-i Initiative Showcase Bundle, an all-star collection of titles that celebrates the culture without extra fluff, hosts, or bloat.</p>\n<p>The post <a href=\"https://www.indiegamebundles.com/humble-triple-i-initiative-showcase-bundle/\">Humble Triple-i Initiative Showcase Bundle</a> appeared first on <a href=\"https://www.indiegamebundles.com\">Indie Game Bundles</a>.</p>",
+          "title": "Humble Triple-i Initiative Showcase Bundle"
+        },
+        {
+          "id": "https://www.indiegamebundles.com/?p=65896",
+          "link": "https://www.indiegamebundles.com/get-microsoft-office-2024-professional-plus/",
+          "published": "2026-10-09T17:27:47Z",
+          "read": false,
+          "starred": false,
+          "summary": "<p>Right now, Microsoft Office 2024 Professional Plus for Windows is available for $49.97 at IGB DEALS, down from the listed price of $249.99.</p>\n<p>The post <a href=\"https://www.indiegamebundles.com/get-microsoft-office-2024-professional-plus/\">Get Microsoft Office 2024 Professional Plus for Just $49.97 \u2013 Lifetime License, No Subscription</a> appeared first on <a href=\"https://www.indiegamebundles.com\">Indie Game Bundles</a>.</p>",
+          "title": "Get Microsoft Office 2024 Professional Plus for Just $49.97 \u2013 Lifetime License, No Subscription"
+        },
+        {
+          "id": "https://www.indiegamebundles.com/?p=66445",
+          "link": "https://www.indiegamebundles.com/fireside-feelings-is-free-on-steam-a-cozy-campfire-built-around-real-conversations/",
+          "published": "2026-10-09T17:27:10Z",
+          "read": false,
+          "starred": false,
+          "summary": "<p>Fireside Feelings is free to claim on Steam for a limited time. The giveaway ends on October 12, 2026 at 17:00 UTC, and once you claim it, the game stays in your library.</p>\n<p>The post <a href=\"https://www.indiegamebundles.com/fireside-feelings-is-free-on-steam-a-cozy-campfire-built-around-real-conversations/\">Fireside Feelings is free on Steam \u2014 a cozy campfire built around real conversations</a> appeared first on <a href=\"https://www.indiegamebundles.com\">Indie Game Bundles</a>.</p>",
+          "title": "Fireside Feelings is free on Steam \u2014 a cozy campfire built around real conversations"
+        },
+        {
+          "id": "https://www.indiegamebundles.com/?p=66451",
+          "link": "https://www.indiegamebundles.com/why-more-adults-are-rediscovering-bingo/",
+          "published": "2026-10-09T07:11:00Z",
+          "read": false,
+          "starred": false,
+          "summary": "<p>Bingo has moved beyond its traditional generational image and is more appealing to a younger audience raised on smartphones.</p>\n<p>The post <a href=\"https://www.indiegamebundles.com/why-more-adults-are-rediscovering-bingo/\">Why More Adults Are Rediscovering Bingo</a> appeared first on <a href=\"https://www.indiegamebundles.com\">Indie Game Bundles</a>.</p>",
+          "title": "Why More Adults Are Rediscovering Bingo"
+        },
+        {
+          "id": "https://www.indiegamebundles.com/?p=66506",
+          "link": "https://www.indiegamebundles.com/humble-serenity-forge-emotional-impact-bundle-18-steam-items-for-just-12/",
+          "published": "2026-10-18T17:11:08Z",
+          "read": false,
+          "starred": false,
+          "summary": "<p>The bundle collects LISA: The Painful,\u00a0Gone Home,\u00a0Tacoma,\u00a0Death's Gambit: Afterlife, and\u00a0Long Gone Days.</p>\n<p>The post <a href=\"https://www.indiegamebundles.com/humble-serenity-forge-emotional-impact-bundle-18-steam-items-for-just-12/\">Humble Serenity Forge Emotional Impact Bundle: 18 Steam Items for Just $12</a> appeared first on <a href=\"https://www.indiegamebundles.com\">Indie Game Bundles</a>.</p>",
+          "title": "Humble Serenity Forge Emotional Impact Bundle: 18 Steam Items for Just $12"
+        },
+        {
+          "id": "https://www.indiegamebundles.com/?p=66503",
+          "link": "https://www.indiegamebundles.com/humble-double-fine-publisher-bundle-11-steam-games-for-just-8/",
+          "published": "2026-10-18T16:52:45Z",
+          "read": false,
+          "starred": false,
+          "summary": "<p>Humble Bundle has launched the\u00a0Double Fine Publisher Bundle, offering 11 Steam games from Double Fine Productions for just\u00a0$8.</p>\n<p>The post <a href=\"https://www.indiegamebundles.com/humble-double-fine-publisher-bundle-11-steam-games-for-just-8/\">Humble Double Fine Publisher Bundle: 11 Steam Games for Just $8</a> appeared first on <a href=\"https://www.indiegamebundles.com\">Indie Game Bundles</a>.</p>",
+          "title": "Humble Double Fine Publisher Bundle: 11 Steam Games for Just $8"
+        },
+        {
+          "id": "https://www.indiegamebundles.com/?p=66493",
+          "link": "https://www.indiegamebundles.com/fanaticals-culinary-capers-bundle-build-your-own-cooking-games-bundle-from-6-99/",
+          "published": "2026-10-17T11:16:00Z",
+          "read": false,
+          "starred": false,
+          "summary": "<p>Fanatical has launched the Cook Up Your Own Culinary Capers Bundle, featuring 11 cooking-themed games and collections, with prices starting at $6.99 for 3 picks.</p>\n<p>The post <a href=\"https://www.indiegamebundles.com/fanaticals-culinary-capers-bundle-build-your-own-cooking-games-bundle-from-6-99/\">Fanatical&#8217;s Culinary Capers Bundle: Build Your Own Cooking Games Bundle from $6.99</a> appeared first on <a href=\"https://www.indiegamebundles.com\">Indie Game Bundles</a>.</p>",
+          "title": "Fanatical&#8217;s Culinary Capers Bundle: Build Your Own Cooking Games Bundle from $6.99"
+        },
+        {
+          "id": "https://www.indiegamebundles.com/?p=66490",
+          "link": "https://www.indiegamebundles.com/humble-bundles-the-factory-must-grow-bundle-8-steam-games-for-12/",
+          "published": "2026-10-16T17:14:07Z",
+          "read": false,
+          "starred": false,
+          "summary": "<p>Humble Bundle has launched The Factory Must Grow Bundle, featuring 8 Steam games focused on factory building, automation, resource management, and survival crafting.</p>\n<p>The post <a href=\"https://www.indiegamebundles.com/humble-bundles-the-factory-must-grow-bundle-8-steam-games-for-12/\">Humble Bundle&#8217;s The Factory Must Grow Bundle: 8 Steam Games for $12</a> appeared first on <a href=\"https://www.indiegamebundles.com\">Indie Game Bundles</a>.</p>",
+          "title": "Humble Bundle&#8217;s The Factory Must Grow Bundle: 8 Steam Games for $12"
+        },
+        {
+          "id": "https://www.indiegamebundles.com/?p=66487",
+          "link": "https://www.indiegamebundles.com/get-10-steam-games-for-24-99-with-the-playforeverychild-charity-bundle-supporting-unicef/",
+          "published": "2026-10-15T17:26:19Z",
+          "read": false,
+          "starred": false,
+          "summary": "<p>The bundle features a great mix of games, including Blue Prince, PEAK, Assetto Corsa Competizione, Riders Republic, and more.</p>\n<p>The post <a href=\"https://www.indiegamebundles.com/get-10-steam-games-for-24-99-with-the-playforeverychild-charity-bundle-supporting-unicef/\">Get 10 Steam Games for $24.99 with the PlayForEveryChild Charity Bundle Supporting UNICEF</a> appeared first on <a href=\"https://www.indiegamebundles.com\">Indie Game Bundles</a>.</p>",
+          "title": "Get 10 Steam Games for $24.99 with the PlayForEveryChild Charity Bundle Supporting UNICEF"
+        },
+        {
+          "id": "https://www.indiegamebundles.com/?p=66484",
+          "link": "https://www.indiegamebundles.com/bad-cheese-is-free-on-epic-games-store-this-week-only/",
+          "published": "2026-10-15T15:56:24Z",
+          "read": false,
+          "starred": false,
+          "summary": "<p>Grab it if you like psychological horror, strange indie games or vintage cartoon aesthetics.</p>\n<p>The post <a href=\"https://www.indiegamebundles.com/bad-cheese-is-free-on-epic-games-store-this-week-only/\">Bad Cheese is free on Epic Games Store this week only</a> appeared first on <a href=\"https://www.indiegamebundles.com\">Indie Game Bundles</a>.</p>",
+          "title": "Bad Cheese is free on Epic Games Store this week only"
+        },
+        {
+          "id": "https://www.indiegamebundles.com/?p=66481",
+          "link": "https://www.indiegamebundles.com/agent-a-a-puzzle-in-disguise-is-free-on-epic-games/",
+          "published": "2026-10-15T15:52:32Z",
+          "read": false,
+          "starred": false,
+          "summary": "<p>Agent A: A puzzle in disguise is free on Epic Games Store from October 15 to October 22, 2026.</p>\n<p>The post <a href=\"https://www.indiegamebundles.com/agent-a-a-puzzle-in-disguise-is-free-on-epic-games/\">Agent A: A puzzle in disguise is free on Epic Games Store \u2014 time for some retro spy work</a> appeared first on <a href=\"https://www.indiegamebundles.com\">Indie Game Bundles</a>.</p>",
+          "title": "Agent A: A puzzle in disguise is free on Epic Games Store \u2014 time for some retro spy work"
+        },
+        {
+          "id": "https://www.indiegamebundles.com/?p=66478",
+          "link": "https://www.indiegamebundles.com/humble-hambles-fright-or-fight-halloween-bundle/",
+          "published": "2026-10-14T18:20:56Z",
+          "read": true,
+          "starred": false,
+          "summary": "<p>Pay $6 for Blair Witch, Observer: System Redux, DEVOUR, Tales from Candleforth, pay $12 to also get The Medium, Layers of Fear, I Hate This Place</p>\n<p>The post <a href=\"https://www.indiegamebundles.com/humble-hambles-fright-or-fight-halloween-bundle/\">Humble Hamble&#8217;s Fright or Fight Halloween Bundle</a> appeared first on <a href=\"https://www.indiegamebundles.com\">Indie Game Bundles</a>.</p>",
+          "title": "Humble Hamble&#8217;s Fright or Fight Halloween Bundle"
+        },
+        {
+          "id": "https://www.indiegamebundles.com/?p=66333",
+          "link": "https://www.indiegamebundles.com/humble-ign-30th-anniversary-bundle/",
+          "published": "2026-10-14T18:03:17Z",
+          "read": true,
+          "starred": false,
+          "summary": "<p>September is a big month for many reasons\u2014and this September is even bigger, because we\u2019re celebrating IGN\u2019s 30th Anniversary! </p>\n<p>The post <a href=\"https://www.indiegamebundles.com/humble-ign-30th-anniversary-bundle/\">Humble IGN 30th Anniversary Bundle &#8211; ENDS SOON</a> appeared first on <a href=\"https://www.indiegamebundles.com\">Indie Game Bundles</a>.</p>",
+          "title": "Humble IGN 30th Anniversary Bundle &#8211; ENDS SOON"
+        },
+        {
+          "id": "https://www.indiegamebundles.com/?p=66473",
+          "link": "https://www.indiegamebundles.com/green-man-gaming-the-darksiders-collection-bundle/",
+          "published": "2026-10-13T16:22:20Z",
+          "read": true,
+          "starred": false,
+          "summary": "<p>This four-game PC collection brings together brutal hack-and-slash combat, dark fantasy adventure and a battle to restore the Balance.</p>\n<p>The post <a href=\"https://www.indiegamebundles.com/green-man-gaming-the-darksiders-collection-bundle/\">Green Man Gaming The Darksiders Collection Bundle</a> appeared first on <a href=\"https://www.indiegamebundles.com\">Indie Game Bundles</a>.</p>",
+          "title": "Green Man Gaming The Darksiders Collection Bundle"
+        },
+        {
+          "id": "https://www.indiegamebundles.com/?p=66470",
+          "link": "https://www.indiegamebundles.com/humble-cozy-after-dark-showcase-bundle/",
+          "published": "2026-10-12T19:07:54Z",
+          "read": true,
+          "starred": false,
+          "summary": "<p>Have some after hours fun with this game bundle of cozy games set in the middle of the night, available at Humble Bundle for a limited time!</p>\n<p>The post <a href=\"https://www.indiegamebundles.com/humble-cozy-after-dark-showcase-bundle/\">Humble Cozy After Dark Showcase Bundle</a> appeared first on <a href=\"https://www.indiegamebundles.com\">Indie Game Bundles</a>.</p>",
+          "title": "Humble Cozy After Dark Showcase Bundle"
+        },
+        {
+          "id": "https://www.indiegamebundles.com/?p=66417",
+          "link": "https://www.indiegamebundles.com/humble-choice-october-2026/",
+          "published": "2026-10-12T18:18:00Z",
+          "read": true,
+          "starred": false,
+          "summary": "<p>Get Like a Dragon: Pirate Yakuza in Hawaii, Prince of Persia The Lost Crown, Psychonauts 2 and more PC games!</p>\n<p>The post <a href=\"https://www.indiegamebundles.com/humble-choice-october-2026/\">Humble Choice October 2026 \u2013 Like a Dragon: Pirate Yakuza in Hawaii, Prince of Persia Lost Crown</a> appeared first on <a href=\"https://www.indiegamebundles.com\">Indie Game Bundles</a>.</p>",
+          "title": "Humble Choice October 2026 \u2013 Like a Dragon: Pirate Yakuza in Hawaii, Prince of Persia Lost Crown"
+        },
+        {
+          "id": "https://www.indiegamebundles.com/?p=66467",
+          "link": "https://www.indiegamebundles.com/hex-reverse-is-free-on-steam/",
+          "published": "2026-10-12T15:24:48Z",
+          "read": false,
+          "starred": false,
+          "summary": "<p>Hex Reverse is free on Steam right now, but this is not a permanent free-to-play release. Developer IsaoWorks plans to make it a paid game after its first 30 days.</p>\n<p>The post <a href=\"https://www.indiegamebundles.com/hex-reverse-is-free-on-steam/\">Hex Reverse is free on Steam for its first 30 days \u2014 claim it now and keep it forever</a> appeared first on <a href=\"https://www.indiegamebundles.com\">Indie Game Bundles</a>.</p>",
+          "title": "Hex Reverse is free on Steam for its first 30 days \u2014 claim it now and keep it forever"
         }
       ]
     }
