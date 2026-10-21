@@ -25,7 +25,7 @@ from PyQt6.QtWidgets import (
     QTextBrowser, QAbstractScrollArea, QSizePolicy, QDialog, QFormLayout, QSpinBox, QMessageBox,
     QMenu, QSystemTrayIcon, QFrame, QHeaderView, QPlainTextEdit
 )
-from PyQt6.QtCore import Qt, QTimer, QThread, pyqtSignal, QUrl
+from PyQt6.QtCore import Qt, QTimer, QThread, pyqtSignal, QUrl, QSize
 from PyQt6.QtGui import QIcon, QPixmap, QDesktopServices, QColor
 
 # ---------------------------------------------------------
@@ -85,11 +85,6 @@ QPushButton:hover {{
 }}
 QPushButton:pressed {{
     background-color: {CP_YELLOW};
-    color: {CP_BG};
-}}
-QPushButton#unread-only-toggle:checked {{
-    background-color: {CP_CYAN};
-    border: 1px solid {CP_CYAN};
     color: {CP_BG};
 }}
 QGroupBox {{
@@ -565,6 +560,15 @@ class ArticlePageFetchWorker(QThread):
         except Exception as exc:
             self.fetched.emit(self.url, "", str(exc))
 
+
+class ClickableLabel(QLabel):
+    clicked = pyqtSignal()
+
+    def mousePressEvent(self, event):
+        if event.button() == Qt.MouseButton.LeftButton:
+            self.clicked.emit()
+        super().mousePressEvent(event)
+
 # ---------------------------------------------------------
 # DIALOGS
 # ---------------------------------------------------------
@@ -703,7 +707,7 @@ class MyRSSApp(QMainWindow):
 
         self.init_settings()
         self.current_filter_mode = self.settings.get("article_filter_mode", "ALL")
-        if self.current_filter_mode not in {"ALL", "UNREAD", "STARRED"}:
+        if self.current_filter_mode not in {"ALL", "STARRED"}:
             self.current_filter_mode = "ALL"
         self.load_feeds_data()
         self.apply_retention_purge()
@@ -865,20 +869,14 @@ class MyRSSApp(QMainWindow):
         # Quick State Buttons
         state_filter_box = QHBoxLayout()
         self.btn_filter_all = QPushButton("ALL")
-        self.btn_filter_unread = QPushButton("UNREAD")
-        self.btn_filter_unread.setObjectName("unread-only-toggle")
         self.btn_filter_starred = QPushButton("★ STARRED")
-        self.btn_filter_unread.setText("UNREAD ONLY")
 
-        for b in [self.btn_filter_all, self.btn_filter_unread, self.btn_filter_starred]:
+        for b in [self.btn_filter_all, self.btn_filter_starred]:
             b.setCheckable(True)
         self.btn_filter_all.setChecked(self.current_filter_mode == "ALL")
-        self.btn_filter_unread.setChecked(self.current_filter_mode == "UNREAD")
-        self.btn_filter_unread.setText("UNREAD ONLY: ON" if self.current_filter_mode == "UNREAD" else "UNREAD ONLY: OFF")
         self.btn_filter_starred.setChecked(self.current_filter_mode == "STARRED")
 
         self.btn_filter_all.clicked.connect(lambda: self.set_state_filter("ALL"))
-        self.btn_filter_unread.clicked.connect(lambda: self.set_state_filter("UNREAD"))
         self.btn_filter_starred.clicked.connect(lambda: self.set_state_filter("STARRED"))
 
         state_filter_box.addWidget(self.btn_filter_all)
@@ -909,7 +907,6 @@ class MyRSSApp(QMainWindow):
         self.list_header.setStyleSheet(f"color: {CP_YELLOW}; font-weight: bold; padding: 4px 0;")
         list_header_row.addWidget(self.list_header)
         list_header_row.addStretch()
-        list_header_row.addWidget(self.btn_filter_unread)
         list_layout.addLayout(list_header_row)
 
         self.article_list_widget = QListWidget()
@@ -918,7 +915,6 @@ class MyRSSApp(QMainWindow):
         self.article_list_widget.setHorizontalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOff)
         self.article_list_widget.setContextMenuPolicy(Qt.ContextMenuPolicy.CustomContextMenu)
         self.article_list_widget.customContextMenuRequested.connect(self.show_article_context_menu)
-        self.article_list_widget.itemClicked.connect(self.on_article_selected)
         list_layout.addWidget(self.article_list_widget, 1)
 
         content_splitter = QSplitter(Qt.Orientation.Vertical)
@@ -1018,15 +1014,13 @@ class MyRSSApp(QMainWindow):
         self.refresh_article_list()
         if filter_type == "FEED" and self.article_list_widget.count():
             self.article_list_widget.setCurrentRow(0)
-            self.on_article_selected(self.article_list_widget.item(0))
+            self.on_article_selected(self.article_list_widget.item(0), mark_read=False)
 
     def set_state_filter(self, mode):
         self.current_filter_mode = mode
         self.settings["article_filter_mode"] = mode
         self.save_settings()
         self.btn_filter_all.setChecked(mode == "ALL")
-        self.btn_filter_unread.setChecked(mode == "UNREAD")
-        self.btn_filter_unread.setText("UNREAD ONLY: ON" if mode == "UNREAD" else "UNREAD ONLY: OFF")
         self.btn_filter_starred.setChecked(mode == "STARRED")
         self.refresh_article_list()
 
@@ -1064,6 +1058,8 @@ class MyRSSApp(QMainWindow):
         # Filter by state (ALL, UNREAD, STARRED)
         filtered = []
         for a, f in candidate_articles:
+            if a.get("hidden", False):
+                continue
             if self.current_filter_mode == "UNREAD" and a.get("read", False):
                 continue
             if self.current_filter_mode == "STARRED" and not a.get("starred", False):
@@ -1100,55 +1096,75 @@ class MyRSSApp(QMainWindow):
             pub_str = parse_date(art.get("published", "")).strftime("%a, %d %b %Y %H:%M")
 
             item_text = f"{title}  {pub_str}"
-            item = QListWidgetItem(item_text)
+            item = QListWidgetItem()
             item.setData(Qt.ItemDataRole.UserRole, (art, feed))
 
             if not is_read:
-                item.setForeground(QColor(CP_CYAN))
+                text_color = CP_CYAN
             else:
-                item.setForeground(QColor(CP_SUBTEXT))
+                text_color = CP_SUBTEXT
 
             if is_starred:
-                item.setForeground(QColor(CP_YELLOW))
+                text_color = CP_YELLOW
 
+            row_widget = QWidget()
+            row_layout = QHBoxLayout(row_widget)
+            row_layout.setContentsMargins(2, 0, 2, 0)
+            row_layout.setSpacing(4)
+            title_label = ClickableLabel(item_text)
+            title_label.setToolTip(title)
+            title_label.setStyleSheet(f"color: {text_color}; padding: 0px; background: transparent;")
+            title_label.setSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Preferred)
+            row_layout.addWidget(title_label, 1)
+
+            hide_button = QPushButton("✓")
+            hide_button.setToolTip("Hide this article from the feed list")
+            hide_button.setFixedSize(24, 22)
+            hide_button.setStyleSheet(f"QPushButton {{ background: transparent; border: 1px solid {CP_GREEN}; color: {CP_GREEN}; padding: 0px; }} QPushButton:hover {{ background: {CP_GREEN}; color: {CP_BG}; }}")
+            hide_button.clicked.connect(lambda checked=False, article=art, source=feed: self.action_hide_article_from_list(article, source))
+            row_layout.addWidget(hide_button)
+
+            title_label.clicked.connect(lambda current=item: self.select_article_list_item(current))
+            item.setSizeHint(QSize(100, 28))
             self.article_list_widget.addItem(item)
+            self.article_list_widget.setItemWidget(item, row_widget)
 
     # --- ARTICLE SELECTION & READING ---
-    def on_article_selected(self, item):
+    def select_article_list_item(self, item):
+        self.article_list_widget.setCurrentItem(item)
+        self.on_article_selected(item)
+
+    def action_hide_article_from_list(self, art, feed):
+        art["read"] = True
+        art["hidden"] = True
+        self.save_feeds_data()
+        self.populate_sidebar()
+        selected_article = self.current_article[0] if self.current_article else None
+        self.refresh_article_list()
+        if selected_article:
+            for row in range(self.article_list_widget.count()):
+                row_item = self.article_list_widget.item(row)
+                row_data = row_item.data(Qt.ItemDataRole.UserRole)
+                if row_data and row_data[0] is selected_article:
+                    self.article_list_widget.setCurrentRow(row)
+                    break
+
+    def on_article_selected(self, item, mark_read=True):
         data = item.data(Qt.ItemDataRole.UserRole)
         if not data:
             return
         art, feed = data
-        previous = self.current_article
-        switched_article = previous and previous[0] is not art
-
-        if self.current_filter_mode == "UNREAD":
-            if switched_article and not previous[0].get("read", False):
-                previous[0]["read"] = True
-                self.save_feeds_data()
-                self.populate_sidebar()
-                self.current_article = (art, feed)
-                self.refresh_article_list()
-                for row in range(self.article_list_widget.count()):
-                    row_item = self.article_list_widget.item(row)
-                    row_data = row_item.data(Qt.ItemDataRole.UserRole)
-                    if row_data and row_data[0] is art:
-                        self.article_list_widget.setCurrentRow(row)
-                        break
-            self.current_article = (art, feed)
-            self.display_article_content(art, feed)
-            self._load_full_article_if_needed(art, feed)
-            return
-
         self.current_article = (art, feed)
-
-        # Mark read on open
-        if not art.get("read", False):
+        if mark_read and not art.get("read", False):
             art["read"] = True
             self.save_feeds_data()
             self.populate_sidebar()
-            item.setForeground(QColor(CP_YELLOW) if art.get("starred") else QColor(CP_SUBTEXT))
-
+            row_widget = self.article_list_widget.itemWidget(item)
+            if row_widget and row_widget.layout():
+                title_label = row_widget.layout().itemAt(0).widget()
+                if isinstance(title_label, QLabel):
+                    title_color = CP_YELLOW if art.get("starred", False) else CP_SUBTEXT
+                    title_label.setStyleSheet(f"color: {title_color}; padding: 0px; background: transparent;")
         self.display_article_content(art, feed)
         self._load_full_article_if_needed(art, feed)
 
@@ -1171,14 +1187,14 @@ class MyRSSApp(QMainWindow):
             self.display_article_content(art, feed)
         elif error:
             feed_title = feed.get("title") or feed.get("url")
-            pub = art.get("published", "Unknown Date")
+            pub = parse_date(art.get("published", "")).strftime("%a, %d %b %Y %H:%M")
             self.reader_meta.setText(f"SOURCE: {feed_title} // PUBLISHED: {pub} // FULL PAGE UNAVAILABLE; SHOWING FEED EXCERPT")
 
     def display_article_content(self, art, feed):
         self.reader_title.setText(art.get("title", "Untitled"))
         feed_title = feed.get("title") or feed.get("url")
-        pub = art.get("published", "Unknown Date")
-        self.reader_meta.setText(f"SOURCE: {feed_title} // PUBLISHED: {pub} // CATEGORY: {feed.get('category')}")
+        pub = parse_date(art.get("published", "")).strftime("%a, %d %b %Y %H:%M")
+        self.reader_meta.setText(f"SOURCE: {feed_title} // PUBLISHED: {pub}")
 
         self.btn_toggle_star.setText("★ UNSTAR" if art.get("starred") else "★ STAR")
         self.btn_toggle_read.setText("MARK UNREAD" if art.get("read") else "MARK READ")
