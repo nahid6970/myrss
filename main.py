@@ -87,6 +87,11 @@ QPushButton:pressed {{
     background-color: {CP_YELLOW};
     color: {CP_BG};
 }}
+QPushButton#unread-only-toggle:checked {{
+    background-color: {CP_CYAN};
+    border: 1px solid {CP_CYAN};
+    color: {CP_BG};
+}}
 QGroupBox {{
     border: 1px solid {CP_DIM};
     margin-top: 10px;
@@ -697,6 +702,9 @@ class MyRSSApp(QMainWindow):
         self.article_page_workers = []
 
         self.init_settings()
+        self.current_filter_mode = self.settings.get("article_filter_mode", "ALL")
+        if self.current_filter_mode not in {"ALL", "UNREAD", "STARRED"}:
+            self.current_filter_mode = "ALL"
         self.load_feeds_data()
         self.apply_retention_purge()
 
@@ -717,7 +725,7 @@ class MyRSSApp(QMainWindow):
 
     # --- SETTINGS & PERSISTENCE ---
     def init_settings(self):
-        self.settings = {"retention_days": 7, "auto_refresh_minutes": 30}
+        self.settings = {"retention_days": 7, "auto_refresh_minutes": 30, "article_filter_mode": "ALL"}
         if os.path.exists(SETTINGS_FILE):
             try:
                 with open(SETTINGS_FILE, "r", encoding="utf-8") as f:
@@ -858,18 +866,22 @@ class MyRSSApp(QMainWindow):
         state_filter_box = QHBoxLayout()
         self.btn_filter_all = QPushButton("ALL")
         self.btn_filter_unread = QPushButton("UNREAD")
+        self.btn_filter_unread.setObjectName("unread-only-toggle")
         self.btn_filter_starred = QPushButton("★ STARRED")
+        self.btn_filter_unread.setText("UNREAD ONLY")
 
         for b in [self.btn_filter_all, self.btn_filter_unread, self.btn_filter_starred]:
             b.setCheckable(True)
-        self.btn_filter_all.setChecked(True)
+        self.btn_filter_all.setChecked(self.current_filter_mode == "ALL")
+        self.btn_filter_unread.setChecked(self.current_filter_mode == "UNREAD")
+        self.btn_filter_unread.setText("UNREAD ONLY: ON" if self.current_filter_mode == "UNREAD" else "UNREAD ONLY: OFF")
+        self.btn_filter_starred.setChecked(self.current_filter_mode == "STARRED")
 
         self.btn_filter_all.clicked.connect(lambda: self.set_state_filter("ALL"))
         self.btn_filter_unread.clicked.connect(lambda: self.set_state_filter("UNREAD"))
         self.btn_filter_starred.clicked.connect(lambda: self.set_state_filter("STARRED"))
 
         state_filter_box.addWidget(self.btn_filter_all)
-        state_filter_box.addWidget(self.btn_filter_unread)
         state_filter_box.addWidget(self.btn_filter_starred)
         sidebar_layout.addLayout(state_filter_box)
 
@@ -892,9 +904,13 @@ class MyRSSApp(QMainWindow):
         list_layout = QVBoxLayout(list_container)
         list_layout.setContentsMargins(5, 0, 5, 0)
 
+        list_header_row = QHBoxLayout()
         self.list_header = QLabel("FEED // INCOMING TRANSMISSIONS")
         self.list_header.setStyleSheet(f"color: {CP_YELLOW}; font-weight: bold; padding: 4px 0;")
-        list_layout.addWidget(self.list_header)
+        list_header_row.addWidget(self.list_header)
+        list_header_row.addStretch()
+        list_header_row.addWidget(self.btn_filter_unread)
+        list_layout.addLayout(list_header_row)
 
         self.article_list_widget = QListWidget()
         self.article_list_widget.setStyleSheet("QListWidget::item { padding: 0px 2px; margin: 0px; }")
@@ -1006,8 +1022,11 @@ class MyRSSApp(QMainWindow):
 
     def set_state_filter(self, mode):
         self.current_filter_mode = mode
+        self.settings["article_filter_mode"] = mode
+        self.save_settings()
         self.btn_filter_all.setChecked(mode == "ALL")
         self.btn_filter_unread.setChecked(mode == "UNREAD")
+        self.btn_filter_unread.setText("UNREAD ONLY: ON" if mode == "UNREAD" else "UNREAD ONLY: OFF")
         self.btn_filter_starred.setChecked(mode == "STARRED")
         self.refresh_article_list()
 

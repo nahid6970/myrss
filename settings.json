@@ -1,0 +1,5 @@
+{
+  "retention_days": 7,
+  "auto_refresh_minutes": 30,
+  "article_filter_mode": "UNREAD"
+}
