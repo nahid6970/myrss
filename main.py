@@ -87,6 +87,10 @@ QPushButton:pressed {{
     background-color: {CP_YELLOW};
     color: {CP_BG};
 }}
+QPushButton#show-hidden-toggle:checked {{
+    background-color: {CP_PANEL};
+    border: 1px solid {CP_CYAN};
+}}
 QGroupBox {{
     border: 1px solid {CP_DIM};
     margin-top: 10px;
@@ -709,6 +713,7 @@ class MyRSSApp(QMainWindow):
         self.current_filter_mode = self.settings.get("article_filter_mode", "ALL")
         if self.current_filter_mode not in {"ALL", "STARRED"}:
             self.current_filter_mode = "ALL"
+        self.show_hidden_articles = bool(self.settings.get("show_hidden_articles", False))
         self.load_feeds_data()
         self.apply_retention_purge()
 
@@ -729,7 +734,7 @@ class MyRSSApp(QMainWindow):
 
     # --- SETTINGS & PERSISTENCE ---
     def init_settings(self):
-        self.settings = {"retention_days": 7, "auto_refresh_minutes": 30, "article_filter_mode": "ALL"}
+        self.settings = {"retention_days": 7, "auto_refresh_minutes": 30, "article_filter_mode": "ALL", "show_hidden_articles": False}
         if os.path.exists(SETTINGS_FILE):
             try:
                 with open(SETTINGS_FILE, "r", encoding="utf-8") as f:
@@ -907,6 +912,15 @@ class MyRSSApp(QMainWindow):
         self.list_header.setStyleSheet(f"color: {CP_YELLOW}; font-weight: bold; padding: 4px 0;")
         list_header_row.addWidget(self.list_header)
         list_header_row.addStretch()
+        self.btn_show_hidden = QPushButton()
+        self.btn_show_hidden.setObjectName("show-hidden-toggle")
+        self.btn_show_hidden.setCheckable(True)
+        self.btn_show_hidden.setFixedSize(34, 30)
+        self.btn_show_hidden.setIconSize(QSize(18, 18))
+        self.btn_show_hidden.setChecked(self.show_hidden_articles)
+        self.btn_show_hidden.toggled.connect(self.set_show_hidden_articles)
+        self._update_show_hidden_button()
+        list_header_row.addWidget(self.btn_show_hidden)
         list_layout.addLayout(list_header_row)
 
         self.article_list_widget = QListWidget()
@@ -1024,6 +1038,20 @@ class MyRSSApp(QMainWindow):
         self.btn_filter_starred.setChecked(mode == "STARRED")
         self.refresh_article_list()
 
+    def _update_show_hidden_button(self):
+        icon_name = "eye-open.svg" if self.show_hidden_articles else "eye-hidden.svg"
+        self.btn_show_hidden.setIcon(QIcon(os.path.join(APP_DIR, "assets", icon_name)))
+        state = "Showing hidden articles" if self.show_hidden_articles else "Hidden articles are concealed"
+        self.btn_show_hidden.setToolTip(f"{state}. Click to toggle.")
+        self.btn_show_hidden.setAccessibleName(state)
+
+    def set_show_hidden_articles(self, enabled):
+        self.show_hidden_articles = enabled
+        self.settings["show_hidden_articles"] = enabled
+        self.save_settings()
+        self._update_show_hidden_button()
+        self.refresh_article_list()
+
     def on_search_changed(self):
         self.refresh_article_list()
 
@@ -1058,7 +1086,7 @@ class MyRSSApp(QMainWindow):
         # Filter by state (ALL, UNREAD, STARRED)
         filtered = []
         for a, f in candidate_articles:
-            if a.get("hidden", False):
+            if a.get("hidden", False) and not self.show_hidden_articles:
                 continue
             if self.current_filter_mode == "UNREAD" and a.get("read", False):
                 continue
@@ -1117,11 +1145,11 @@ class MyRSSApp(QMainWindow):
             title_label.setSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Preferred)
             row_layout.addWidget(title_label, 1)
 
-            hide_button = QPushButton("✓")
-            hide_button.setToolTip("Hide this article from the feed list")
+            hide_button = QPushButton("↶" if art.get("hidden", False) else "✓")
+            hide_button.setToolTip("Restore this article" if art.get("hidden", False) else "Hide this article from the feed list")
             hide_button.setFixedSize(24, 22)
             hide_button.setStyleSheet(f"QPushButton {{ background: transparent; border: 1px solid {CP_GREEN}; color: {CP_GREEN}; padding: 0px; }} QPushButton:hover {{ background: {CP_GREEN}; color: {CP_BG}; }}")
-            hide_button.clicked.connect(lambda checked=False, article=art, source=feed: self.action_hide_article_from_list(article, source))
+            hide_button.clicked.connect(lambda checked=False, article=art, source=feed: self.action_toggle_article_hidden(article, source))
             row_layout.addWidget(hide_button)
 
             title_label.clicked.connect(lambda current=item: self.select_article_list_item(current))
@@ -1134,9 +1162,11 @@ class MyRSSApp(QMainWindow):
         self.article_list_widget.setCurrentItem(item)
         self.on_article_selected(item)
 
-    def action_hide_article_from_list(self, art, feed):
-        art["read"] = True
-        art["hidden"] = True
+    def action_toggle_article_hidden(self, art, feed):
+        hiding = not art.get("hidden", False)
+        art["hidden"] = hiding
+        if hiding:
+            art["read"] = True
         self.save_feeds_data()
         self.populate_sidebar()
         selected_article = self.current_article[0] if self.current_article else None
