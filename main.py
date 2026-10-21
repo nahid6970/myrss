@@ -22,7 +22,7 @@ from PyQt6.QtWidgets import (
     QApplication, QMainWindow, QWidget, QVBoxLayout, QHBoxLayout,
     QLabel, QPushButton, QLineEdit, QGroupBox, QSplitter,
     QTreeWidget, QTreeWidgetItem, QListWidget, QListWidgetItem,
-    QTextBrowser, QDialog, QFormLayout, QSpinBox, QMessageBox,
+    QTextBrowser, QAbstractScrollArea, QSizePolicy, QDialog, QFormLayout, QSpinBox, QMessageBox,
     QMenu, QSystemTrayIcon, QFrame, QHeaderView, QPlainTextEdit
 )
 from PyQt6.QtCore import Qt, QTimer, QThread, pyqtSignal, QUrl
@@ -841,6 +841,7 @@ class MyRSSApp(QMainWindow):
 
         # 2. MAIN SPLITTER: FEED NAVIGATION LEFT, ARTICLES ABOVE READER
         splitter = QSplitter(Qt.Orientation.Horizontal)
+        splitter.setChildrenCollapsible(False)
 
         # SIDEBAR (LEFT)
         sidebar_widget = QWidget()
@@ -886,6 +887,8 @@ class MyRSSApp(QMainWindow):
 
         # ARTICLE LIST (CENTER)
         list_container = QWidget()
+        list_container.setMinimumSize(0, 0)
+        list_container.setSizePolicy(QSizePolicy.Policy.Ignored, QSizePolicy.Policy.Ignored)
         list_layout = QVBoxLayout(list_container)
         list_layout.setContentsMargins(5, 0, 5, 0)
 
@@ -903,10 +906,13 @@ class MyRSSApp(QMainWindow):
         list_layout.addWidget(self.article_list_widget, 1)
 
         content_splitter = QSplitter(Qt.Orientation.Vertical)
+        content_splitter.setChildrenCollapsible(False)
         content_splitter.addWidget(list_container)
 
         # ARTICLE READER PANE (RIGHT)
         reader_container = QWidget()
+        reader_container.setMinimumSize(0, 0)
+        reader_container.setSizePolicy(QSizePolicy.Policy.Ignored, QSizePolicy.Policy.Ignored)
         reader_layout = QVBoxLayout(reader_container)
         reader_layout.setContentsMargins(5, 0, 0, 0)
 
@@ -941,6 +947,7 @@ class MyRSSApp(QMainWindow):
         # Text Viewer
         self.article_browser = QTextBrowser()
         self.article_browser.setOpenExternalLinks(True)
+        self.article_browser.setSizeAdjustPolicy(QAbstractScrollArea.SizeAdjustPolicy.AdjustIgnored)
         reader_layout.addWidget(self.article_browser, 1)
         reader_layout.addLayout(reader_toolbar)
 
