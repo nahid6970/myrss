@@ -1119,6 +1119,27 @@ class MyRSSApp(QMainWindow):
         if not data:
             return
         art, feed = data
+        previous = self.current_article
+        switched_article = previous and previous[0] is not art
+
+        if self.current_filter_mode == "UNREAD":
+            if switched_article and not previous[0].get("read", False):
+                previous[0]["read"] = True
+                self.save_feeds_data()
+                self.populate_sidebar()
+                self.current_article = (art, feed)
+                self.refresh_article_list()
+                for row in range(self.article_list_widget.count()):
+                    row_item = self.article_list_widget.item(row)
+                    row_data = row_item.data(Qt.ItemDataRole.UserRole)
+                    if row_data and row_data[0] is art:
+                        self.article_list_widget.setCurrentRow(row)
+                        break
+            self.current_article = (art, feed)
+            self.display_article_content(art, feed)
+            self._load_full_article_if_needed(art, feed)
+            return
+
         self.current_article = (art, feed)
 
         # Mark read on open
@@ -1126,11 +1147,12 @@ class MyRSSApp(QMainWindow):
             art["read"] = True
             self.save_feeds_data()
             self.populate_sidebar()
-            # Update list item color
             item.setForeground(QColor(CP_YELLOW) if art.get("starred") else QColor(CP_SUBTEXT))
-            item.setText(item.text().replace("●", " "))
 
         self.display_article_content(art, feed)
+        self._load_full_article_if_needed(art, feed)
+
+    def _load_full_article_if_needed(self, art, feed):
         if art.get("link") and not art.get("full_content"):
             self.reader_meta.setText(self.reader_meta.text() + " // LOADING FULL ARTICLE…")
             worker = ArticlePageFetchWorker(art["link"], feed.get("article_selectors", []))
