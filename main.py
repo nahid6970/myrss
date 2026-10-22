@@ -816,9 +816,8 @@ class MyRSSApp(QMainWindow):
             self.save_feeds_data()
 
     def init_system_tray(self):
-        pix = QPixmap(16, 16)
-        pix.fill(QColor(CP_CYAN))
-        self.tray_icon = QSystemTrayIcon(QIcon(pix), self)
+        tray_icon_path = os.path.join(APP_DIR, "assets", "myrss-tray.svg")
+        self.tray_icon = QSystemTrayIcon(QIcon(tray_icon_path), self)
         self.tray_icon.setToolTip("myRSS")
         tray_menu = QMenu()
         open_action = tray_menu.addAction("Open myRSS")
