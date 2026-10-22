@@ -25,8 +25,8 @@ from PyQt6.QtWidgets import (
     QTextBrowser, QAbstractScrollArea, QSizePolicy, QDialog, QFormLayout, QSpinBox, QCheckBox, QMessageBox,
     QMenu, QSystemTrayIcon, QFrame, QHeaderView, QPlainTextEdit
 )
-from PyQt6.QtCore import Qt, QTimer, QThread, pyqtSignal, QUrl, QSize
-from PyQt6.QtGui import QIcon, QPixmap, QDesktopServices, QColor
+from PyQt6.QtCore import Qt, QTimer, QThread, pyqtSignal, QUrl, QSize, QRect
+from PyQt6.QtGui import QIcon, QPixmap, QDesktopServices, QColor, QPainter
 
 # ---------------------------------------------------------
 # CONSTANTS & CYBERPUNK PALETTE
@@ -817,8 +817,8 @@ class MyRSSApp(QMainWindow):
 
     def init_system_tray(self):
         tray_icon_path = os.path.join(APP_DIR, "assets", "myrss-tray.svg")
+        self._tray_icon_path = tray_icon_path
         self.tray_icon = QSystemTrayIcon(QIcon(tray_icon_path), self)
-        self.tray_icon.setToolTip("myRSS")
         tray_menu = QMenu()
         open_action = tray_menu.addAction("Open myRSS")
         open_action.triggered.connect(self.restore_from_tray)
@@ -828,6 +828,31 @@ class MyRSSApp(QMainWindow):
         self.tray_icon.setContextMenu(tray_menu)
         self.tray_icon.activated.connect(self.on_tray_activated)
         self.tray_icon.show()
+        self.update_tray_status_icon()
+
+    def update_tray_status_icon(self):
+        if not hasattr(self, "tray_icon"):
+            return
+
+        unread_count = sum(
+            1
+            for feed in self.feeds
+            for article in feed.get("articles", [])
+            if not article.get("read", False)
+        )
+        if unread_count == 0:
+            self.tray_icon.setIcon(QIcon(self._tray_icon_path))
+            self.tray_icon.setToolTip("myRSS")
+            return
+
+        pixmap = QIcon(self._tray_icon_path).pixmap(64, 64)
+        painter = QPainter(pixmap)
+        painter.setCompositionMode(QPainter.CompositionMode.CompositionMode_SourceIn)
+        painter.fillRect(pixmap.rect(), QColor(CP_RED))
+        painter.end()
+
+        self.tray_icon.setIcon(QIcon(pixmap))
+        self.tray_icon.setToolTip("myRSS — unread articles")
 
     def on_tray_activated(self, reason):
         if reason in (QSystemTrayIcon.ActivationReason.Trigger, QSystemTrayIcon.ActivationReason.DoubleClick):
@@ -847,13 +872,6 @@ class MyRSSApp(QMainWindow):
                 and QSystemTrayIcon.isSystemTrayAvailable()
                 and not getattr(self, "_exit_requested", False)):
             self.hide()
-            if self.tray_icon:
-                self.tray_icon.showMessage(
-                    "myRSS is still running",
-                    "The app is available from the system tray.",
-                    QSystemTrayIcon.MessageIcon.Information,
-                    2500
-                )
             event.ignore()
             return
         self.tray_icon.hide()
@@ -1200,6 +1218,8 @@ class MyRSSApp(QMainWindow):
             self.article_list_widget.addItem(item)
             self.article_list_widget.setItemWidget(item, row_widget)
 
+        self.update_tray_status_icon()
+
     # --- ARTICLE SELECTION & READING ---
     def select_article_list_item(self, item):
         self.article_list_widget.setCurrentItem(item)
@@ -1232,6 +1252,7 @@ class MyRSSApp(QMainWindow):
             art["read"] = True
             self.save_feeds_data()
             self.populate_sidebar()
+            self.update_tray_status_icon()
             row_widget = self.article_list_widget.itemWidget(item)
             if row_widget and row_widget.layout():
                 title_label = row_widget.layout().itemAt(0).widget()
