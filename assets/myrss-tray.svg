@@ -1,12 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <defs>
-    <linearGradient id="panel" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#111820"/>
-      <stop offset="1" stop-color="#05090d"/>
-    </linearGradient>
-  </defs>
-  <rect x="3" y="3" width="58" height="58" rx="15" fill="url(#panel)" stroke="#00F0FF" stroke-width="3"/>
-  <path d="M17 37c5.5 0 10 4.5 10 10M17 27c11 0 20 9 20 20M17 17c16.6 0 30 13.4 30 30" fill="none" stroke="#00F0FF" stroke-width="4.5" stroke-linecap="round"/>
-  <circle cx="17" cy="47" r="3.5" fill="#FCEE0A"/>
-  <path d="M43 17h5v5h-5z" fill="#FCEE0A"/>
-</svg>
+<svg fill="#ffffff" height="200px" width="200px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="-143 145 512 512" xml:space="preserve" stroke="#ffffff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <path d="M-143,145v512h512V145H-143z M339,627h-452V175h452V627z"></path> <path d="M104.8,528.9L104.8,528.9l49.1,0.1c0-46.6-19-88.7-49.6-119.4C73.8,379,31.6,360.1-15,360v48.9c31.9,0,62.1,12.6,84.7,35.2 C92.3,466.7,104.8,496.9,104.8,528.9z"></path> <path d="M192,529h49c0-70.6-28.7-134.5-75.1-180.9C119.6,301.7,55.7,273-14.9,273v48.9C99.2,322,191.9,414.9,192,529z"></path> <path d="M19,528.7c9.4,0,17.8-3.7,24-9.9s10-14.6,10-23.9c0-9.4-3.8-17.8-10-24c-6.2-6.2-14.6-10-24-10s-17.8,3.8-24,10 s-10,14.6-10,24c0,9.3,3.8,17.7,10,23.9C1.2,524.9,9.6,528.7,19,528.7z"></path> </g> </g></svg>
