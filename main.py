@@ -22,7 +22,7 @@ from PyQt6.QtWidgets import (
     QApplication, QMainWindow, QWidget, QVBoxLayout, QHBoxLayout,
     QLabel, QPushButton, QLineEdit, QGroupBox, QSplitter,
     QTreeWidget, QTreeWidgetItem, QListWidget, QListWidgetItem,
-    QTextBrowser, QAbstractScrollArea, QSizePolicy, QDialog, QFormLayout, QSpinBox, QMessageBox,
+    QTextBrowser, QAbstractScrollArea, QSizePolicy, QDialog, QFormLayout, QSpinBox, QCheckBox, QMessageBox,
     QMenu, QSystemTrayIcon, QFrame, QHeaderView, QPlainTextEdit
 )
 from PyQt6.QtCore import Qt, QTimer, QThread, pyqtSignal, QUrl, QSize
@@ -580,7 +580,7 @@ class SettingsDialog(QDialog):
     def __init__(self, parent=None, settings=None):
         super().__init__(parent)
         self.setWindowTitle("// SETTINGS TERMINAL")
-        self.resize(380, 240)
+        self.resize(420, 280)
         self.settings = settings or {}
 
         layout = QVBoxLayout(self)
@@ -597,6 +597,9 @@ class SettingsDialog(QDialog):
         self.refresh_spin.setValue(int(self.settings.get("auto_refresh_minutes", 30)))
         self.refresh_spin.setSuffix(" MINS")
 
+        self.close_to_tray_check = QCheckBox("Keep running in the system tray when the window is closed")
+        self.close_to_tray_check.setChecked(bool(self.settings.get("close_to_tray", False)))
+
         form.addRow("RETENTION PURGE:", self.retention_spin)
         form.addRow("AUTO-SYNC INTERVAL:", self.refresh_spin)
         grp.setLayout(form)
@@ -612,12 +615,14 @@ class SettingsDialog(QDialog):
         btn_box.addWidget(save_btn)
 
         layout.addWidget(grp)
+        layout.addWidget(self.close_to_tray_check)
         layout.addStretch()
         layout.addLayout(btn_box)
 
     def save_and_close(self):
         self.settings["retention_days"] = self.retention_spin.value()
         self.settings["auto_refresh_minutes"] = self.refresh_spin.value()
+        self.settings["close_to_tray"] = self.close_to_tray_check.isChecked()
         self.accept()
 
 class AddEditFeedDialog(QDialog):
@@ -734,7 +739,7 @@ class MyRSSApp(QMainWindow):
 
     # --- SETTINGS & PERSISTENCE ---
     def init_settings(self):
-        self.settings = {"retention_days": 7, "auto_refresh_minutes": 30, "article_filter_mode": "ALL", "show_hidden_articles": False}
+        self.settings = {"retention_days": 7, "auto_refresh_minutes": 30, "article_filter_mode": "ALL", "show_hidden_articles": False, "close_to_tray": False}
         if os.path.exists(SETTINGS_FILE):
             try:
                 with open(SETTINGS_FILE, "r", encoding="utf-8") as f:
@@ -814,7 +819,46 @@ class MyRSSApp(QMainWindow):
         pix = QPixmap(16, 16)
         pix.fill(QColor(CP_CYAN))
         self.tray_icon = QSystemTrayIcon(QIcon(pix), self)
+        self.tray_icon.setToolTip("myRSS")
+        tray_menu = QMenu()
+        open_action = tray_menu.addAction("Open myRSS")
+        open_action.triggered.connect(self.restore_from_tray)
+        tray_menu.addSeparator()
+        exit_action = tray_menu.addAction("Exit")
+        exit_action.triggered.connect(self.exit_application)
+        self.tray_icon.setContextMenu(tray_menu)
+        self.tray_icon.activated.connect(self.on_tray_activated)
         self.tray_icon.show()
+
+    def on_tray_activated(self, reason):
+        if reason in (QSystemTrayIcon.ActivationReason.Trigger, QSystemTrayIcon.ActivationReason.DoubleClick):
+            self.restore_from_tray()
+
+    def restore_from_tray(self):
+        self.showNormal()
+        self.raise_()
+        self.activateWindow()
+
+    def exit_application(self):
+        self._exit_requested = True
+        self.close()
+
+    def closeEvent(self, event):
+        if (self.settings.get("close_to_tray", False)
+                and QSystemTrayIcon.isSystemTrayAvailable()
+                and not getattr(self, "_exit_requested", False)):
+            self.hide()
+            if self.tray_icon:
+                self.tray_icon.showMessage(
+                    "myRSS is still running",
+                    "The app is available from the system tray.",
+                    QSystemTrayIcon.MessageIcon.Information,
+                    2500
+                )
+            event.ignore()
+            return
+        self.tray_icon.hide()
+        event.accept()
 
     # --- UI INITIALIZATION ---
     def init_ui(self):
