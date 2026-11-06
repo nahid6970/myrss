@@ -34,6 +34,7 @@ from PyQt6.QtGui import QIcon, QPixmap, QDesktopServices, QColor, QPainter
 APP_DIR = os.path.dirname(os.path.abspath(__file__))
 FEEDS_FILE = os.path.join(APP_DIR, "feeds.json")
 SETTINGS_FILE = os.path.join(APP_DIR, "settings.json")
+APP_ICON_FILE = os.path.join(APP_DIR, "rss-svgrepo-com.svg")
 
 CP_BG = "#050505"
 CP_PANEL = "#111111"
@@ -702,6 +703,7 @@ class AddEditFeedDialog(QDialog):
 class MyRSSApp(QMainWindow):
     def __init__(self):
         super().__init__()
+        self.setWindowIcon(QIcon(APP_ICON_FILE))
         self.setWindowTitle("myRSS // CYBER INTEL TERMINAL")
         self.resize(1200, 750)
         self.setStyleSheet(CYBER_STYLE)
@@ -1565,6 +1567,7 @@ class MyRSSApp(QMainWindow):
 # ---------------------------------------------------------
 def main():
     app = QApplication(sys.argv)
+    app.setWindowIcon(QIcon(APP_ICON_FILE))
     window = MyRSSApp()
     window.show()
     sys.exit(app.exec())
